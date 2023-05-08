@@ -1,0 +1,73 @@
+// Full and wide aligment
+
+
+
+
+// Custom corporative colors classes
+
+.has-black-color {
+	color: $black;
+}
+.has-black-background-color {
+	background-color: $black;
+}
+
+.has-red-color {
+	color: $red;
+}
+
+.has-red-background-color {
+	background-color: $red;
+}
+
+.has-dark-blue-color {
+	color: $dark_blue;
+}
+.has-dark-blue-background-color {
+	background-color: $dark_blue;
+}
+
+.has-grey-color {
+	color: $grey;
+}
+.has-grey-background-color {
+	background-color: $grey;
+}
+
+.has-white-color {
+	color: #fff;
+}
+.has-white-background-color {
+	background-color: #fff;
+}
+
+
+// Custom corporative Buttons
+
+
+/* Button block
+--------------------------------------------- */
+
+.wp-block-button__link {
+
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:not(.has-text-color) {
+		color: white;
+		&:hover {
+			color: white;
+		}
+	}
+
+	&:not(.has-background) {
+	//	background-color: $red;
+		&:hover,
+		&:focus {
+			// background-color: darken( $default, 20% );
+		}
+	}
+}
+

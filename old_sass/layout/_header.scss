@@ -1,0 +1,80 @@
+/****** Header*******/
+
+
+.site-header {
+  	flex: none;
+  	padding-top: 0;
+  	background-color: white;
+    width: 100%;
+ //   position: fixed;
+ //   z-index: 100;
+ //   top: 0;
+ //   left: 0;
+  	@media screen and (min-width: $tablet) {
+  	     -webkit-box-shadow: 1px 1px 3px 1px rgba(255,255,255,0.4);
+		box-shadow: 1px 1px 3px 1px rgba(255,255,255,0.4);
+
+  	  	.header-container {
+   			display: flex;
+    		flex-flow: row nowrap;
+    		justify-content: space-between;
+    		align-items: flex-end;
+    		width: 100%;
+    		max-width: 1280px;
+    		margin: 0 auto;
+    		padding: 1rem;
+
+  		}
+  	}
+  	@media screen and (max-width: $tablet) {
+    	padding-top: 0rem;
+    	border-bottom: 1px solid black;
+    	box-shadow: 0 3px 9px rgba(0, 0, 0, 0.2);
+    	.header-container {
+    		border-bottom: none;
+    		display: block;
+    		border: none;
+    }
+	}
+
+  .site-branding {
+  		@media screen and (max-width: $tablet) {
+  			padding-left: 1rem;
+  			min-height: 50px;
+    		display: flex;
+    		align-items: center;
+  		}
+  		.site-title {display: none;}
+  		.custom-logo-link{
+     		width: 66px;
+    		height: 34px;
+  			@media screen and (min-width: $tablet) {
+    			width: 180px;
+    			height: 60px;
+    			img{
+  					max-width: initial;
+  				}
+  			}
+  		}
+	}
+}
+body.admin-bar .site-header { 
+  	top: 28px;
+}
+
+
+.stick {
+  	position:fixed;
+  	top:-30px;
+  	left:0;
+  	width:100%;
+  	z-index: 1000;
+	@media (min-width: $tablet) {
+ 		.logged-in &{ 		
+ 			transform: translate(0,62px); 	
+ 		}
+ 	}
+ 	  .site-branding{
+  		
+  	}
+}

@@ -1,0 +1,35 @@
+<?php
+/**
+ * Template part for displaying posts
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package Miles_2020
+ */
+
+?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+			<div class="blog-wrapper">		
+			<?php if ( has_post_thumbnail() ) { ?>
+				<?php echo '<a href="'. get_the_permalink() . '" class="fagblogg-thumbnail fagblogg-column">';  ?>
+					<figure >
+						<?php the_post_thumbnail('feature-image'); ?>
+					</figure>
+				<?php echo '</a>'; ?>
+			<?php } ?>
+
+			<div class="blog-content-wrapper">
+				<?php echo '<a href="'. get_the_permalink() . '" class="fagblogg-thumbnail">';  ?>
+					<?php  the_title( '<h2 class="entry-title">', '</h2>' ); ?>
+				<?php echo '</a>'; ?>
+				<div class="entry-meta">
+					<?php miles_2020_posted_on();?>  by <?php the_author(); ?>
+				</div><!-- .entry-meta -->
+			</div>
+
+		</div>
+		
+
+</article><!-- #post-<?php the_ID(); ?> -->

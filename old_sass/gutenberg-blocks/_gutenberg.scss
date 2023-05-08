@@ -1,0 +1,44 @@
+/********** Typography ****/
+
+.editor-post-title {
+	font-family: $font__header;
+	font-weight: 700;
+}
+
+.editor-post-title__input {
+//	color: $white;
+	font-family: $font__header;
+	font-weight: 700;
+
+
+	&:focus {
+	//	color: $white;
+	}
+}
+
+
+
+/* Post title width */
+.editor-post-title__block.wp-block {
+	max-width: $content-width;
+
+	/* Post title styling */
+	.editor-post-title__input {
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

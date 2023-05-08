@@ -1,0 +1,115 @@
+/* Alignaments */
+
+
+.alignleft {
+	
+	/*rtl:ignore*/
+	float: left;
+
+	/*rtl:ignore*/
+	margin-right: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.alignright {
+    
+	/*rtl:ignore*/
+	float: right;
+
+	/*rtl:ignore*/
+	margin-left: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+
+// We are using Gutenberg default left/right alignments for
+// our custom ACF feature block and need to override the
+// default values. If we want to create a IE fallback (for
+// CSS GRID) we need to restore the float - HL 07.05.2020
+
+
+.custom-block-feature-block.alignright {	
+	margin-bottom: $base-margin * 6 !important;
+	float: none;
+	margin-left: 0; //reset gutenberg default
+	
+	@media (min-width: $tablet) {
+	   margin-left: calc(50% - 50vw);
+	}
+}
+
+.custom-block-feature-block.alignleft {
+	margin-bottom: $base-margin * 6 !important;
+	float: none;
+	margin-right: 0; //reset gutenberg default
+	
+	@media (min-width: $tablet) {
+	   margin-right: calc(50% - 50vw);
+	}
+}
+
+
+.aligncenter {
+	clear: both;
+	@include center-block;
+
+	margin-bottom: 1.5em;
+}
+
+
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; // Many screen reader and browser combinations announce broken words as they would appear visually.
+
+	&:focus {
+		background-color: $color__background-screen;
+		border-radius: 3px;
+		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+		clip: auto !important;
+		clip-path: none;
+		color: $color__text-screen;
+		display: block;
+		font-size: 0.875rem;
+		font-weight: 700;
+		height: auto;
+		left: 5px;
+		line-height: normal;
+		padding: 15px 23px 14px;
+		text-decoration: none;
+		top: 5px;
+		width: auto;
+		z-index: 100000; // Above WP toolbar.
+	}
+}
+
+/* Do not show the outline on the skip link target. */
+#primary[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/*--------------------------------------------------------------
+## Display none
+--------------------------------------------------------------*/
+.no-display {
+	display: none;
+}
+.no-tablet{
+	@media screen and (max-width: $tablet) {  
+		display: none;
+	}
+}
+.no-phone{
+	@media screen and (max-width: $mobile) {  
+		display: none;
+	}
+}

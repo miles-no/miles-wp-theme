@@ -1,0 +1,75 @@
+/*!
+Theme Name: Miles 2020
+Author: ignitas.no
+Author URI: http://www.ignitas.no
+Description: Gutenberg editor scss
+Version: 1.0.0
+
+*/
+
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Base
+   - Base
+   - Typography
+   - Elements
+   - Mixins
+   - Variables
+   
+ # Layout
+   - Footer
+    - Header 
+	- Grid  
+
+# Navigation
+    - Nav-links
+    - Menus 
+    
+# Blocks
+   - Core-blocks
+   - Custom-blocks
+   - Base
+   
+# Components
+   - Sidebar-content
+   - Content-sidebar
+   - No-sidebar
+   - Post-and-pages
+   - Archives
+   - Widgets
+   - Forms
+   - Search
+   
+# CPT
+	
+
+--------------------------------------------------------------*/
+
+@import "normalize";
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+@import "base/variables";
+@import "base/mixins";
+@import "base/typography";
+@import "base/elements";
+
+
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+@import "layout/grid";
+@import "blocks/gutenberg";
+
+/*--------------------------------------------------------------
+# Gutenberg blocks
+--------------------------------------------------------------*/
+@import "blocks/base";
+@import "blocks/core-blocks";
+@import "blocks/custom-blocks";
+

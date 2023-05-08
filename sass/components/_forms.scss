@@ -1,0 +1,233 @@
+// Fields
+.field-style{
+	  padding: $base-margin $base-margin * 2;
+	  border: 1px solid $silver;
+	  border-radius: 42px; 
+}
+// Form 7 grid classes
+.wpcf7-form {
+	
+	.wpcf7-form-control-wrap{}
+  
+	.wpcf7-checkbox {
+		display: grid;
+		margin-top: 20px;
+		grid-gap: 0;
+    
+		@media (min-width: $mobile) {
+			grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+		}
+    
+		@media (min-width: $tablet) {
+			grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+		}
+	}
+  
+	span.wpcf7-list-item {
+		margin-left:0;
+		display: flex;
+		align-items: center;
+		position: relative;
+	}
+  
+	.wpcf7-list-item-label{
+		margin-left: $base-margin / 2;
+	}
+	
+	label  {
+  		font-size: $font__size-body;
+		line-height: $font__line-height-body;
+	}
+	
+	p {margin: $base-margin * 2 0;}
+	
+		
+}
+
+.checkbox-roller,
+.checkbox-interests {
+	font-size: 16px;
+	font-weight: 400;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	color: $color__text-input;
+	width: 100%;
+	font-size: $font__size-body;
+	line-height: $font__line-height-body;
+	
+	@extend .field-style;
+	
+	&:focus {
+	//	color: $color__text-input-focus;
+		outline: none !important;
+		border-radius: 42px;
+		border-color: $black;
+	}
+	
+	.wpcf7-form &{
+	  margin-top: $base-margin / 2;
+	}
+}
+
+textarea {border-radius: 20px !important;}
+
+select {
+	border: 1px solid $color__border-input;
+}
+
+textarea {
+	width: 100%;
+}
+
+
+@supports(-webkit-appearance: none) or (-moz-appearance: none) {
+	
+/*	input[type='checkbox'],
+	input[type='radio'] {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		width: 20px;
+		height: 20px;
+		border: 1px solid $silver;	
+		position: relative;	
+		background-color: white;
+		border-radius: 5px;
+	//	--active: #275EFE;
+    //	--active-inner: #fff;
+    //	--focus: 2px rgba(39, 94, 254, .25);
+    //	--border: #BBC1E1;
+    //	--border-hover: #275EFE;
+    //	--background: #fff;
+    //	--disabled: #F6F8FF;
+    //	--disabled-inner: #E1E6F9;
+	}
+	
+	input[type='radio'] {
+    	border-radius: 100%;
+	}
+  
+	input[type="checkbox"]:focus,
+	input[type='radio']:focus {
+		border: $miles-red solid 1px;	
+		outline: $miles-red;
+    }
+   
+	input[type='checkbox']:hover,
+	input[type='radio']:hover {
+		border: 1px solid rgba(black, 0.5);	
+	}
+	
+  input[type="checkbox"]:checked,
+  input[type='radio']:checked {
+		background: $silver;
+  } 
+
+	input[type="checkbox"]:checked + span.wpcf7-list-item-label:before, //causes a bug in the behaviour - needs fixing
+	input[type='radio']:checked + span.wpcf7-list-item-label:before { 
+    	width: $base-margin;
+    	height: $base-margin;
+    	position: absolute;
+    	left: 4px;
+    	content: "✓";
+    	display:inline-block;
+    	color: white;
+    	z-index: 11;
+    	font-size: 14px;
+    	font-weight: bold;
+    	
+    	&:hover {border-color: $silver;}
+	}  */
+	
+	input[type="file"]::-webkit-file-upload-button {
+		-webkit-appearance: none;
+		background-color: white;
+		border: 1px solid $silver;
+		height: initial;
+		padding: $base-margin / 2  $base-margin;
+		font-size: 18px;
+		margin-top: $base-margin / 2;
+		border-radius: 42px;
+	
+		&:focus{}
+	} 
+}
+
+@supports(-moz-appearance: none) {  //for firefox
+
+	input[type=file]::file-selector-button {
+		-moz-appearance: none;
+		background-color: white;
+		border: 1px solid $silver;
+		height: initial;
+		padding: $base-margin / 2  $base-margin;
+		font-size: 18px;
+		margin-top: $base-margin / 2;
+		border-radius: 42px;
+	}
+}
+
+// Buttons
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+
+	@include button-reset;
+
+	padding: $base-margin $base-margin * 2;
+	background: $miles-red;
+	font-size: $font__size-body;
+	line-height: $font__line-height-body;
+	color: white;
+	border-radius: 42px;
+	
+	&:disabled {
+		background: $silver;
+		
+		&:hover {
+			background: $silver;
+		}
+	}
+    
+    //@extend .field-style;
+
+	&:hover {
+		border-color: $miles-red;
+		background-color: $miles_red;
+	}
+
+	&:active,
+	&:focus {
+	//	border-color: $color__border-button-focus;
+		outline: thin dotted;
+	}
+}
+
+.search-form{
+    display: flex;
+    justify-content: space-between;
+    label{
+      width: 100%;
+      margin-right: $base_margin;
+    }
+
+}
+
+

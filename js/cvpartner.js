@@ -1,0 +1,1 @@
+console.log('cv partner script loaded');

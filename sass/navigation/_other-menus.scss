@@ -1,0 +1,164 @@
+
+/********* 
+Other menus 
+************/
+
+
+/* Cities menu.  desktop*/
+
+.cities-navigation {
+	.menu-primary-menu-container {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+
+		}
+
+		ul.menu {
+			display: flex;
+			flex-flow: row wrap;
+			li:after{
+				  content: "—";
+				  color: #999;
+				  font-size: 14px;
+				  margin-left: 4px;
+				  margin-right: 4px;
+				  font-weight: 700;
+				  background: transparent;
+				 // width: 17.5px;
+				  //height: 2px;
+				 // background-color: $black;
+				  //display: inline-block;
+				  //margin: 0 7px;
+				  //margin-bottom: 5px;
+				  
+				  .open-menu & {color: rgba(white, 0.5);}
+			}
+			& > li a{
+		      //color: $black;
+		      color: #999;
+		      
+		      .open-menu &{
+		        color: rgba(white, 0.5);
+		      }
+		      
+		    }
+		    
+		     li:last-child{ //what is this - check.. HL
+		      // display: flex;
+		      // align-items: center;
+		       &:after{
+		         display: none;
+		       }
+		     }
+		     
+ 		 	li:last-child ul{
+				right:0;
+			}	
+	
+			li > ul.sub-menu {
+				min-width: 200px;
+				display:none;	
+				background-color: white;
+				box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+				z-index: 100;
+    			opacity: 0;
+    			padding:21px;
+    			padding-left: 0;    			
+
+    			a {
+    				color: $white;
+    				text-transform: initial;
+    				font-size: 17.5px;
+    				
+    			}
+
+    			li:focus{
+    			  outline: thin dotted;
+    			}
+    			li.current-menu-item a {
+    		//		color: $blue;
+
+    			}
+    			li:after{
+    			  display: none;
+    			}
+    			// 3rt level sub-menu
+    			li > ul.sub-menu{
+                     right: 100%;
+                     top: -7px;
+                     @include anim-transition (all, 200ms, ease-in-out, 0s);
+                     opacity: 0;                 
+			    }
+			    li:hover > ul.sub-menu{
+			      opacity: 1;
+			      
+			    }
+
+    			
+			}
+
+			a { 
+				//font-size: 14px;
+				//font-weight: 700;
+				//text-transform: uppercase;
+			}
+			
+			a:hover {
+				color: $black;
+			}
+			.city-menu-image{
+		        display: none;
+		    }
+			
+			.current_page_item > a,
+			.current-menu-item > a,
+			.current_page_ancestor > a,
+			.current-menu-ancestor > a {
+			//	color: $blue;
+				//text-decoration: underline;
+				color: $black;
+				
+				.open-menu &{
+		        color: white;
+		      }
+				
+				
+				
+				&:focus{
+				  outline: thin dotted;
+				}
+
+			}
+            li.focus > ul,
+			li:hover > ul  {
+				position: absolute;
+				left: auto;	
+				@include anim-transition (all, 300ms, ease-in-out, 0s);
+				opacity:1;
+				display: block;	
+								
+				li {
+					padding: 0rem;
+					padding-top: 14px;
+					padding-left: 21px;
+					&:nth-child(1)  {padding-top:0;}
+				}
+				li:before {
+                  content: "»";
+                  padding-right: 7px;
+
+    		}
+			a {
+				padding:0;
+
+
+			}				
+				
+		}
+	}
+}
+
+
+
+

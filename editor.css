@@ -1,0 +1,2005 @@
+/*!
+Theme Name: Miles 2020
+Author: ignitas.no
+Author URI: http://www.ignitas.no
+Description: Gutenberg editor scss
+Version: 1.0.0
+
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Base
+   - Base
+   - Typography
+   - Elements
+   - Mixins
+   - Variables
+   
+ # Layout
+   - Footer
+    - Header 
+	- Grid  
+
+# Navigation
+    - Nav-links
+    - Menus 
+    
+# Blocks
+   - Core-blocks
+   - Custom-blocks
+   - Base
+   
+# Components
+   - Sidebar-content
+   - Content-sidebar
+   - No-sidebar
+   - Post-and-pages
+   - Archives
+   - Widgets
+   - Forms
+   - Search
+   
+# CPT
+	
+
+--------------------------------------------------------------*/
+/* Inherit box-sizing to more easily change it's value on a component level.
+@link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+/* line 3, sass/_normalize.scss */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* line 9, sass/_normalize.scss */
+html {
+  box-sizing: border-box;
+}
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+	 ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+/* line 25, sass/_normalize.scss */
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Sections
+	 ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+/* line 37, sass/_normalize.scss */
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+/* line 45, sass/_normalize.scss */
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+/* line 54, sass/_normalize.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+	 ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+/* line 67, sass/_normalize.scss */
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+/* line 78, sass/_normalize.scss */
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Text-level semantics
+	 ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+/* line 90, sass/_normalize.scss */
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+/* line 99, sass/_normalize.scss */
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+/* line 109, sass/_normalize.scss */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+/* line 119, sass/_normalize.scss */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+/* line 130, sass/_normalize.scss */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+/* line 139, sass/_normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 147, sass/_normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 151, sass/_normalize.scss */
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+	 ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+/* line 162, sass/_normalize.scss */
+img {
+  border-style: none;
+}
+
+/* Forms
+	 ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+/* line 174, sass/_normalize.scss */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+/* line 190, sass/_normalize.scss */
+button,
+input {
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+/* line 200, sass/_normalize.scss */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+/* line 209, sass/_normalize.scss */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+/* line 220, sass/_normalize.scss */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+/* line 232, sass/_normalize.scss */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+/* line 243, sass/_normalize.scss */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *		`fieldset` elements in all browsers.
+ */
+/* line 254, sass/_normalize.scss */
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+/* line 267, sass/_normalize.scss */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+/* line 275, sass/_normalize.scss */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+/* line 284, sass/_normalize.scss */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+/* line 294, sass/_normalize.scss */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+/* line 304, sass/_normalize.scss */
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+/* line 313, sass/_normalize.scss */
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+/* line 322, sass/_normalize.scss */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+/* Interactive
+	 ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+/* line 334, sass/_normalize.scss */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+/* line 342, sass/_normalize.scss */
+summary {
+  display: list-item;
+}
+
+/* Misc
+	 ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+/* line 353, sass/_normalize.scss */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+/* line 361, sass/_normalize.scss */
+[hidden] {
+  display: none;
+}
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Colors
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Typography
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+  ## Site strucure
+-------------------------------------------------------------- */
+/*--------------------------------------------------------------
+  ## Site margins and paddings
+-------------------------------------------------------------- */
+/*$block-padding-desktop:  140px 8.333%;
+$block-padding-mobile:  70px 4.1666%;
+
+$block-vertical-margin: 140px;*/
+/*--------------------------------------------------------------
+  ## Columns
+-------------------------------------------------------------- */
+/*--------------------------------------------------------------
+## Breakpoints
+--------------------------------------------------------------*/
+/**
+ * Mixin transition cross browser
+ */
+/**
+ * Button Reset
+ */
+/**
+ * Brand Color - move this -HL
+ *
+ */
+/**
+ * CSS-Grid Columns, with float fallback (https://www.billerickson.net/css-grid-ie-fallback/)
+ *
+ */
+/**
+ * Columns, Mobile
+ *
+ */
+/**
+ * Columns, Tablet
+ *
+ */
+/**
+ * Columns, Tablet Up
+ *
+ */
+/**
+ * Columns, Desktop
+ *
+ */
+@font-face {
+  font-family: Circular;
+  src: url("/wp-content/themes/miles_2020/fonts/CircularStd-Book.otf") format("opentype");
+  src: url("/wp-content/themes/miles_2020/fonts/CircularStd-Book.woff2") format("woff2"), url("/wp-content/themes/miles_2020/fonts/CircularStd-Book.ttf") format("truetype"), url("/wp-content/themes/miles_2020/fonts/CircularStd-Book.svg#svgFontName") format("svg");
+  font-weight: 400;
+}
+@font-face {
+  font-family: Circular;
+  src: url("/wp-content/themes/miles_2020/fonts/CircularStd-Bold.otf") format("opentype");
+  src: url("/wp-content/themes/miles_2020/fonts/CircularStd-Bold.woff2") format("woff2"), url("/wp-content/themes/miles_2020/fonts/CircularStd-Bold.ttf") format("truetype"), url("/wp-content/themes/miles_2020/fonts/CircularStd-Bold.svg#svgFontName") format("svg");
+  font-weight: 700;
+}
+/* line 18, sass/base/_typography.scss */
+html,
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+  color: #404040;
+  font-family: "Circular", sans-serif;
+  font-size: 18.6666px;
+  line-height: 28px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 34, sass/base/_typography.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  clear: both;
+}
+
+/* line 43, sass/base/_typography.scss */
+h1.has-large-font-size {
+  font-size: 93px;
+  line-height: 98px;
+  margin: 42px 0 56px 0;
+}
+
+/* line 49, sass/base/_typography.scss */
+h1 {
+  font-size: 72px;
+  line-height: 84px;
+  margin: 56px 0;
+}
+
+/* line 59, sass/base/_typography.scss */
+h2 {
+  font-size: 47px;
+  line-height: 56px;
+  margin: 42px 0;
+}
+/* line 64, sass/base/_typography.scss */
+h2.entry-title {
+  font-size: 18.6666px;
+  line-height: 28px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+/* line 73, sass/base/_typography.scss */
+h2.banner-title,
+h3 {
+  font-size: 28px;
+  line-height: 42px;
+}
+/* line 79, sass/base/_typography.scss */
+h2.banner-title.banner-title,
+h3.banner-title {
+  margin-top: 0;
+  margin-bottom: 28px;
+}
+@media (min-width: 768px) {
+  /* line 83, sass/base/_typography.scss */
+  h2.banner-title.feature-title,
+  h3.feature-title {
+    margin-top: 0;
+    margin-bottom: 28px;
+  }
+}
+
+/* line 93, sass/base/_typography.scss */
+h4 {
+  font-size: 23px;
+  line-height: 28px;
+  margin-top: 28px;
+  margin-bottom: 28px;
+}
+/* line 99, sass/base/_typography.scss */
+h4.widget-title {
+  margin: 0;
+  font-size: 18.6666px;
+  line-height: 28px;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+/* line 109, sass/base/_typography.scss */
+h5 {
+  margin-block-start: 1.42857em;
+  margin-block-end: 1.42857em;
+  font-size: 14px;
+  line-height: 28px;
+  text-transform: uppercase;
+}
+
+/* line 117, sass/base/_typography.scss */
+h6 {
+  font-size: 18.6666px;
+  line-height: 28px;
+  margin-top: 28px;
+  margin-bottom: 0;
+}
+
+/* line 125, sass/base/_typography.scss */
+p,
+.banner_text {
+  font-size: 18.6666px;
+  line-height: 28px;
+}
+/* line 130, sass/base/_typography.scss */
+p.has-large-font-size,
+.banner_text.has-large-font-size {
+  font-size: 23px;
+}
+
+/* line 135, sass/base/_typography.scss */
+dfn,
+cite,
+em,
+i {
+  font-style: italic;
+}
+
+/* line 142, sass/base/_typography.scss */
+blockquote {
+  margin: 0 1.5em;
+}
+
+/* line 146, sass/base/_typography.scss */
+address {
+  margin: 0 0 1.5em;
+}
+
+/* line 150, sass/base/_typography.scss */
+.entry-meta {
+  font-size: 15px;
+}
+
+/* line 152, sass/base/_typography.scss */
+pre {
+  background: #eee;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em;
+}
+
+/* line 162, sass/base/_typography.scss */
+code,
+kbd,
+tt,
+var {
+  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+/* line 169, sass/base/_typography.scss */
+abbr,
+acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help;
+}
+
+/* line 175, sass/base/_typography.scss */
+mark,
+ins {
+  background: #fff9c0;
+  text-decoration: none;
+}
+
+/* line 181, sass/base/_typography.scss */
+big {
+  font-size: 125%;
+}
+
+/* line 1, sass/base/_elements.scss */
+body {
+  background: #fff;
+}
+
+/* line 6, sass/base/_elements.scss */
+p {
+  margin-block-start: calc(28em / 19);
+  margin-block-end: calc(28em / 19);
+}
+
+/* line 12, sass/base/_elements.scss */
+ul,
+ol {
+  margin: 0 0 1.5em 3em;
+}
+
+/* line 17, sass/base/_elements.scss */
+ul {
+  list-style: disc;
+}
+/* line 19, sass/base/_elements.scss */
+.wp-block-pb-accordion-item ul {
+  padding-left: 0;
+  margin: 0;
+}
+
+/* line 25, sass/base/_elements.scss */
+ol {
+  list-style: decimal;
+}
+
+/* line 29, sass/base/_elements.scss */
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 30px;
+}
+
+/* line 35, sass/base/_elements.scss */
+dt {
+  font-weight: 700;
+}
+
+/* line 39, sass/base/_elements.scss */
+dd {
+  margin: 0 30px 30px;
+}
+
+/* line 44, sass/base/_elements.scss */
+hr {
+  background-color: #ccc;
+  border: 0;
+  height: 1px;
+  margin-bottom: 30px;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+/* line 53, sass/base/_elements.scss */
+embed,
+iframe,
+object {
+  max-width: 100%;
+}
+
+/* line 59, sass/base/_elements.scss */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* line 64, sass/base/_elements.scss */
+figure {
+  margin: 1em 0;
+}
+
+/* line 69, sass/base/_elements.scss */
+table {
+  margin: 0 0 30px;
+  width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+/* line 1, sass/layout/_grid.scss */
+.site-main {
+  overflow-x: hidden;
+  /* Resolves issue with <pre> elements forcing full width. */
+}
+
+/* line 5, sass/layout/_grid.scss */
+body {
+  overflow-x: hidden;
+}
+/* line 8, sass/layout/_grid.scss */
+body.open-menu {
+  overflow-y: hidden;
+}
+
+/*--------------------------------------------------------------
+## block widths 
+--------------------------------------------------------------*/
+/* line 20, sass/layout/_grid.scss */
+.search-container,
+.error-404,
+.entry-content {
+  margin-left: 14px;
+  margin-right: 14px;
+  max-width: 100vw;
+}
+@media (min-width: 768px) {
+  /* line 20, sass/layout/_grid.scss */
+  .search-container,
+  .error-404,
+  .entry-content {
+    margin: 0 auto;
+    max-width: 66.6666vw;
+  }
+}
+
+/* line 33, sass/layout/_grid.scss */
+.custom-block-large-banner {
+  margin-right: calc(50% - 50vw);
+  margin-left: calc(50% - 50vw);
+  max-width: 100vw;
+  width: 100vw;
+}
+
+@media (min-width: 768px) {
+  /* line 40, sass/layout/_grid.scss */
+  .alignfull,
+  .custom-block-feature-block {
+    margin-right: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw);
+    max-width: 100vw;
+    width: 100vW;
+  }
+}
+
+@media (min-width: 768px) {
+  /* line 50, sass/layout/_grid.scss */
+  .alignwide {
+    margin-left: calc(25% - 25vw);
+    margin-right: calc(25% - 25vw);
+  }
+}
+
+@media (min-width: 768px) {
+  /* line 59, sass/layout/_grid.scss */
+  *[class*='__inner-container'] {
+    max-width: 66.6666vw;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+/*--------------------------------------------------------------
+## block vertical margins & paddings
+--------------------------------------------------------------*/
+/* line 77, sass/layout/_grid.scss */
+*[class*=' wp-block'] > *[class*=' wp-block'],
+*[class^='wp-block'] > *[class^='wp-block'] {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* line 85, sass/layout/_grid.scss */
+*[class*='wp-block-column'] > *[class*=' wp-block-column'],
+*[class^='wp-block-column'] > *[class^='wp-block-column'] {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* line 95, sass/layout/_grid.scss */
+.has-background *[class*='__inner-container'], .has-background-dim *[class*='__inner-container'] {
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+@media (min-width: 768px) {
+  /* line 95, sass/layout/_grid.scss */
+  .has-background *[class*='__inner-container'], .has-background-dim *[class*='__inner-container'] {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+}
+@media (min-width: 1025px) {
+  /* line 95, sass/layout/_grid.scss */
+  .has-background *[class*='__inner-container'], .has-background-dim *[class*='__inner-container'] {
+    padding-top: 84px;
+    padding-bottom: 84px;
+  }
+}
+
+/* line 114, sass/layout/_grid.scss */
+.wp-block-column > *:first-child {
+  margin-top: 0;
+}
+
+/* line 118, sass/layout/_grid.scss */
+.wp-block-cover__inner-container .has-text-align-center {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+## Helper classes
+--------------------------------------------------------------*/
+/* line 128, sass/layout/_grid.scss */
+.collapse {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* line 133, sass/layout/_grid.scss */
+.top-padding {
+  padding-top: 28px;
+}
+@media (min-width: 768px) {
+  /* line 133, sass/layout/_grid.scss */
+  .top-padding {
+    padding-top: 56px;
+  }
+}
+
+/* line 140, sass/layout/_grid.scss */
+.bottom-padding {
+  padding-bottom: 28px;
+}
+@media (min-width: 768px) {
+  /* line 140, sass/layout/_grid.scss */
+  .bottom-padding {
+    padding-bottom: 56px;
+  }
+}
+
+@media (min-width: 768px) {
+  /* line 148, sass/layout/_grid.scss */
+  .push-1 {
+    padding-left: 8.3333vw;
+    max-width: 58.3333vw;
+  }
+}
+
+@media (min-width: 768px) {
+  /* line 155, sass/layout/_grid.scss */
+  .push-2 {
+    padding-left: 14.6666vw;
+    max-width: 64.6666vw;
+  }
+}
+
+@media (min-width: 768px) {
+  /* line 162, sass/layout/_grid.scss */
+  .pull-1 {
+    margin-left: -8.3333vw;
+    max-width: 58.3333vw;
+  }
+}
+
+@media (min-width: 768px) {
+  /* line 169, sass/layout/_grid.scss */
+  .pull-2 {
+    margin-left: -14.6666vw;
+    max-width: 58.3333vw;
+  }
+}
+
+@media (min-width: 768px) {
+  /* line 176, sass/layout/_grid.scss */
+  .right-padding {
+    padding-right: 14px;
+  }
+}
+
+/* line 184, sass/layout/_grid.scss */
+.wp-block-group > h1,
+.wp-block-group > h2,
+.wp-block-group > h3,
+.wp-block-group > h4,
+.wp-block-group > h5,
+*[class*='__inner-container'] > h1,
+*[class*='__inner-container'] > h2,
+*[class*='__inner-container'] > h3,
+*[class*='__inner-container'] > h4,
+*[class*='__inner-container'] > h5 {
+  margin-top: 28px;
+  margin-bottom: 28px;
+}
+/* line 197, sass/layout/_grid.scss */
+.wp-block-group > h1.collapse,
+.wp-block-group > h2.collapse,
+.wp-block-group > h3.collapse,
+.wp-block-group > h4.collapse,
+.wp-block-group > h5.collapse,
+*[class*='__inner-container'] > h1.collapse,
+*[class*='__inner-container'] > h2.collapse,
+*[class*='__inner-container'] > h3.collapse,
+*[class*='__inner-container'] > h4.collapse,
+*[class*='__inner-container'] > h5.collapse {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* line 204, sass/layout/_grid.scss */
+*[class*='__inner-container']:first-child > h1,
+*[class*='__inner-container']:first-child > h2,
+*[class*='__inner-container']:first-child > h3,
+*[class*='__inner-container']:first-child > h4,
+*[class*='__inner-container']:first-child > h5 {
+  margin-top: 0;
+}
+/* line 211, sass/layout/_grid.scss */
+*[class*='__inner-container']:first-child > h1.top-padding,
+*[class*='__inner-container']:first-child > h2.top-padding,
+*[class*='__inner-container']:first-child > h3.top-padding,
+*[class*='__inner-container']:first-child > h4.top-padding,
+*[class*='__inner-container']:first-child > h5.top-padding {
+  padding-top: 56px;
+}
+
+/* body, p {
+	@include base-style();
+} */
+/* line 6, sass/blocks/_gutenberg.scss */
+.alignright::after {
+  display: table;
+  clear: both;
+}
+
+/* Post title width */
+/* line 10, sass/blocks/_gutenberg.scss */
+.editor-post-title__block.wp-block {
+  max-width: 66.6666vw;
+  /* Post title styling */
+}
+
+/* Main column width */
+/* line 20, sass/blocks/_gutenberg.scss */
+.wp-block {
+  max-width: 66.6666vw;
+  /* Wide column width */
+  /* Full column width */
+}
+/* line 24, sass/blocks/_gutenberg.scss */
+.wp-block[data-align="wide"] {
+  max-width: none;
+}
+@media (min-width: 1025px) {
+  /* line 24, sass/blocks/_gutenberg.scss */
+  .wp-block[data-align="wide"] {
+    max-width: none;
+    margin-left: 8.333%;
+    margin-right: 8.333%;
+  }
+}
+/* line 35, sass/blocks/_gutenberg.scss */
+.wp-block[data-align="full"] {
+  max-width: none;
+}
+/* line 39, sass/blocks/_gutenberg.scss */
+.wp-block[data-align="right"] {
+  height: initial;
+}
+
+/* line 44, sass/blocks/_gutenberg.scss */
+.wp-block[data-align=right] > * {
+  float: none !important;
+}
+
+/* line 45, sass/blocks/_gutenberg.scss */
+.custom-block-feature-block.alignright {
+  float: none !important;
+}
+
+/* custom block feature */
+/* line 49, sass/blocks/_gutenberg.scss */
+*[class*='custom-block'],
+*[class^='custom-block'] {
+  margin-top: 28px;
+  margin-bottom: 28px;
+}
+@media (min-width: 768px) {
+  /* line 49, sass/blocks/_gutenberg.scss */
+  *[class*='custom-block'],
+  *[class^='custom-block'] {
+    margin-top: 56px;
+    margin-bottom: 56px;
+  }
+}
+@media (min-width: 1025px) {
+  /* line 49, sass/blocks/_gutenberg.scss */
+  *[class*='custom-block'],
+  *[class^='custom-block'] {
+    margin-top: 84px;
+    margin-bottom: 84px;
+  }
+}
+
+/* line 67, sass/blocks/_gutenberg.scss */
+.wp-block-image {
+  line-height: 0;
+}
+
+/* line 73, sass/blocks/_gutenberg.scss */
+.block-editor-block-list__layout .block-editor-block-list__block[data-align=right] > .block-editor-block-list__block-edit {
+  float: none;
+  clear: both;
+}
+
+/* line 77, sass/blocks/_gutenberg.scss */
+.custom-block-menu-city-block {
+  min-height: 56vh;
+}
+
+/* line 81, sass/blocks/_gutenberg.scss */
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+  max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Gutenberg blocks
+--------------------------------------------------------------*/
+/********** Typography ****/
+/* line 3, sass/blocks/_base.scss */
+.editor-post-title {
+  font-family: "Circular", sans-serif;
+  font-weight: 700;
+}
+
+/* line 8, sass/blocks/_base.scss */
+.editor-post-title__input {
+  font-family: "Circular", sans-serif;
+  font-weight: 700;
+}
+
+/* Post title width */
+/* line 21, sass/blocks/_base.scss */
+.editor-post-title__block.wp-block {
+  max-width: 66.6666vw;
+  /* Post title styling */
+}
+
+/* line 33, sass/blocks/_base.scss */
+.has-black-color {
+  color: #2b353f;
+}
+
+/* line 36, sass/blocks/_base.scss */
+.has-black-background-color {
+  background-color: #2b353f;
+}
+
+/* line 40, sass/blocks/_base.scss */
+.has-miles-red-color {
+  color: #b8261c;
+}
+
+/* line 44, sass/blocks/_base.scss */
+.has-miles-red-background-color {
+  background-color: #b8261c;
+}
+/* line 46, sass/blocks/_base.scss */
+.large-banner-block .has-miles-red-background-color {
+  background-color: rgba(183, 35, 24, 0.9);
+}
+
+/* line 51, sass/blocks/_base.scss */
+.has-dark-blue-color {
+  color: #051d34;
+}
+
+/* line 54, sass/blocks/_base.scss */
+.has-dark-blue-background-color {
+  background-color: #051d34;
+}
+/* line 57, sass/blocks/_base.scss */
+.custom-block-large-banner .has-dark-blue-background-color {
+  background-color: rgba(5, 29, 52, 0.9);
+}
+
+/* line 62, sass/blocks/_base.scss */
+.has-silver-color {
+  color: #B5BBC4;
+}
+
+/* line 65, sass/blocks/_base.scss */
+.has-silver-background-color {
+  background-color: #B5BBC4;
+}
+
+/* line 69, sass/blocks/_base.scss */
+.has-silver-light-color {
+  color: #e5eBf4;
+}
+
+/* line 72, sass/blocks/_base.scss */
+.has-silver-light-background-color {
+  background-color: #e5eBf4;
+}
+
+/* line 76, sass/blocks/_base.scss */
+.has-white-color {
+  color: #fff;
+}
+
+/* line 79, sass/blocks/_base.scss */
+.has-white-background-color {
+  background-color: #fff;
+}
+/* line 81, sass/blocks/_base.scss */
+.large-banner-block .has-white-background-color {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* line 86, sass/blocks/_base.scss */
+.has-tranparent-color {
+  color: #fff;
+}
+
+/* line 89, sass/blocks/_base.scss */
+.has-tranparent-color {
+  background-color: transparent;
+}
+
+/* Button block
+--------------------------------------------- */
+/* line 102, sass/blocks/_base.scss */
+.wp-block-button__link:hover {
+  text-decoration: none;
+}
+/* line 106, sass/blocks/_base.scss */
+.wp-block-button__link:not(.has-text-color) {
+  color: white;
+}
+/* line 108, sass/blocks/_base.scss */
+.wp-block-button__link:not(.has-text-color):hover {
+  color: white;
+}
+
+/******** Blocks core ******/
+/* Button
+--------------------------------------------- */
+/* line 7, sass/blocks/_core-blocks.scss */
+.wp-block-button {
+  margin: 28px auto !important;
+}
+
+/* line 11, sass/blocks/_core-blocks.scss */
+.wp-block-button__link {
+  display: inline-block;
+  margin-block-start: 0.5em;
+  margin-block-end: 1.4em;
+  padding: 14px 28px;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 28px;
+  border-radius: 42px;
+  border: none;
+  box-shadow: none;
+  color: inherit;
+  cursor: pointer;
+  margin: 0;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+/* Cover
+--------------------------------------------- */
+/* line 33, sass/blocks/_core-blocks.scss */
+.wp-block-cover__inner-container > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Nested columns - reusable block
+--------------------------------------------- */
+@media (min-width: 768px) {
+  /* line 38, sass/blocks/_core-blocks.scss */
+  .wp-block-column:not(:first-child) {
+    margin-left: 0;
+  }
+}
+@media (min-width: 600px) and (max-width: 768px) {
+  /* line 44, sass/blocks/_core-blocks.scss */
+  .wp-block-column:nth-child(2n) {
+    margin-left: 0;
+  }
+}
+/* line 51, sass/blocks/_core-blocks.scss */
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+  max-width: 100%;
+}
+
+/* line 57, sass/blocks/_core-blocks.scss */
+.wp-block-image {
+  line-height: 0;
+}
+
+/* line 61, sass/blocks/_core-blocks.scss */
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+  max-width: 100%;
+}
+
+/* line 65, sass/blocks/_core-blocks.scss */
+.block-library-list ol,
+.block-library-list ul {
+  margin-left: 0;
+}
+
+/* line 71, sass/blocks/_core-blocks.scss */
+.block-post-listing,
+.block-region-destinations,
+.block-quick-links {
+  position: relative;
+}
+
+/* line 78, sass/blocks/_core-blocks.scss */
+.block-editor-rich-text__editable a {
+  text-decoration: none;
+}
+/* line 81, sass/blocks/_core-blocks.scss */
+.block-editor-rich-text__editable a:hover {
+  text-decoration: underline;
+}
+
+/*
+* From AE starter theme - for testing (tweaking?) purposes - HL
+*
+*/
+/* Blockquote
+--------------------------------------------- */
+/* line 96, sass/blocks/_core-blocks.scss */
+blockquote,
+blockquote.wp-block-quote {
+  background: transparent url(../icons/utility/quote.svg) no-repeat top left;
+  background-size: 36px auto;
+  text-align: left;
+  border-left: 2px solid #b8261c;
+  margin: 28px 0 !important;
+  padding: 84px 28px;
+}
+/* line 105, sass/blocks/_core-blocks.scss */
+blockquote.floatleft,
+blockquote.wp-block-quote.floatleft {
+  max-width: 50%;
+  float: left;
+  margin-right: 28px;
+}
+/* line 111, sass/blocks/_core-blocks.scss */
+blockquote.floatright,
+blockquote.wp-block-quote.floatright {
+  max-width: 50%;
+  float: right;
+  margin-left: 28px;
+}
+/* line 117, sass/blocks/_core-blocks.scss */
+blockquote p,
+blockquote.wp-block-quote p {
+  margin: 0;
+  font-size: 23px;
+  line-height: 28px;
+  font-style: normal;
+  font-weight: 700;
+  color: black;
+}
+/* line 126, sass/blocks/_core-blocks.scss */
+blockquote cite,
+blockquote .wp-block-quote__citation,
+blockquote.wp-block-quote cite,
+blockquote.wp-block-quote .wp-block-quote__citation {
+  color: #2b353f;
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 12px;
+  opacity: .5;
+  text-transform: uppercase;
+  font-style: normal;
+}
+/* line 138, sass/blocks/_core-blocks.scss */
+blockquote.is-style-large,
+blockquote.wp-block-quote.is-style-large {
+  margin: 56px 0 !important;
+  border-left: 0;
+  padding: 0;
+  background: transparent;
+}
+/* line 144, sass/blocks/_core-blocks.scss */
+blockquote.is-style-large p,
+blockquote.wp-block-quote.is-style-large p {
+  font-size: 28px;
+  line-height: 42px;
+  font-style: normal;
+  color: black;
+}
+/* line 152, sass/blocks/_core-blocks.scss */
+blockquote.is-style-large cite,
+blockquote.is-style-large .wp-block-quote__citation,
+blockquote.wp-block-quote.is-style-large cite,
+blockquote.wp-block-quote.is-style-large .wp-block-quote__citation {
+  font-size: 14px;
+}
+/* line 160, sass/blocks/_core-blocks.scss */
+blockquote p:last-of-type,
+blockquote.wp-block-quote p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Separator
+--------------------------------------------- */
+/* line 169, sass/blocks/_core-blocks.scss */
+.wp-block-separator,
+hr {
+  background: transparent;
+  border: none;
+  width: 100%;
+  height: 32px;
+  position: relative;
+}
+/* line 177, sass/blocks/_core-blocks.scss */
+.wp-block-separator::before,
+hr::before {
+  background: #B5BBC4;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  margin-top: -.5px;
+}
+
+/* Image
+--------------------------------------------- */
+/* line 192, sass/blocks/_core-blocks.scss */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+/* line 197, sass/blocks/_core-blocks.scss */
+img.alignleft {
+  float: left;
+  margin: 0 56px 56px 0;
+}
+/* line 202, sass/blocks/_core-blocks.scss */
+img.alignright {
+  float: right;
+  margin: 0 0 56px 56px;
+}
+/* line 207, sass/blocks/_core-blocks.scss */
+img.aligncenter {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 216, sass/blocks/_core-blocks.scss */
+.wp-block-image img {
+  width: 100%;
+}
+/* line 218, sass/blocks/_core-blocks.scss */
+.wp-block-image figcaption {
+  text-align: left;
+  font-size: 14px;
+  font-style: normal;
+  margin-top: 14px;
+  line-height: 1.5;
+}
+
+/* line 228, sass/blocks/_core-blocks.scss */
+.wp-block-cover,
+.wp-block-cover-image {
+  position: relative;
+  min-height: 420px;
+  height: 100%;
+  /* width:100%; */
+  width: initial;
+}
+
+/* Tables
+--------------------------------------------- */
+/* line 240, sass/blocks/_core-blocks.scss */
+.wp-block-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+/* line 245, sass/blocks/_core-blocks.scss */
+.wp-block-table td, .wp-block-table th {
+  padding: .5em;
+  border: 1px solid;
+}
+
+/* Color Options
+--------------------------------------------- */
+/* line 256, sass/blocks/_core-blocks.scss */
+.has-miles-red-color {
+  color: #b8261c !important;
+}
+
+/* line 260, sass/blocks/_core-blocks.scss */
+.has-miles-red-background-color {
+  background-color: #b8261c !important;
+}
+
+/* line 256, sass/blocks/_core-blocks.scss */
+.has-silver-color {
+  color: #B5BBC4 !important;
+}
+
+/* line 260, sass/blocks/_core-blocks.scss */
+.has-silver-background-color {
+  background-color: #B5BBC4 !important;
+}
+
+/* line 256, sass/blocks/_core-blocks.scss */
+.has-silver-light-color {
+  color: #e5eBf4 !important;
+}
+
+/* line 260, sass/blocks/_core-blocks.scss */
+.has-silver-light-background-color {
+  background-color: #e5eBf4 !important;
+}
+
+/* Group
+--------------------------------------------- */
+@media (max-width: 768px) {
+  /* line 285, sass/blocks/_core-blocks.scss */
+  .wp-block-group.has-background .wp-block-group__inner-container {
+    margin-left: 28px;
+    margin-right: 28px;
+  }
+}
+/* line 292, sass/blocks/_core-blocks.scss */
+.wp-block-group.has-miles-red-background-color, .wp-block-group.has-dark-blue-background-color, .wp-block-group.has-black-background-color {
+  color: white;
+}
+/* line 298, sass/blocks/_core-blocks.scss */
+.wp-block-group.has-miles-red-background-color h1, .wp-block-group.has-miles-red-background-color h2, .wp-block-group.has-miles-red-background-color h3, .wp-block-group.has-miles-red-background-color h4, .wp-block-group.has-miles-red-background-color h5, .wp-block-group.has-miles-red-background-color h6, .wp-block-group.has-miles-red-background-color p, .wp-block-group.has-dark-blue-background-color h1, .wp-block-group.has-dark-blue-background-color h2, .wp-block-group.has-dark-blue-background-color h3, .wp-block-group.has-dark-blue-background-color h4, .wp-block-group.has-dark-blue-background-color h5, .wp-block-group.has-dark-blue-background-color h6, .wp-block-group.has-dark-blue-background-color p, .wp-block-group.has-black-background-color h1, .wp-block-group.has-black-background-color h2, .wp-block-group.has-black-background-color h3, .wp-block-group.has-black-background-color h4, .wp-block-group.has-black-background-color h5, .wp-block-group.has-black-background-color h6, .wp-block-group.has-black-background-color p {
+  color: white;
+}
+/* line 302, sass/blocks/_core-blocks.scss */
+.wp-block-group.has-miles-red-background-color .plus-icon .st0, .wp-block-group.has-dark-blue-background-color .plus-icon .st0, .wp-block-group.has-black-background-color .plus-icon .st0 {
+  stroke: white;
+}
+/* line 305, sass/blocks/_core-blocks.scss */
+.wp-block-group.has-miles-red-background-color .accordion-content, .wp-block-group.has-dark-blue-background-color .accordion-content, .wp-block-group.has-black-background-color .accordion-content {
+  border-top: solid 1px white;
+}
+/* line 307, sass/blocks/_core-blocks.scss */
+.wp-block-group.has-miles-red-background-color .accordion-content:last-child, .wp-block-group.has-dark-blue-background-color .accordion-content:last-child, .wp-block-group.has-black-background-color .accordion-content:last-child {
+  border-bottom: solid 1px white;
+}
+
+/* Column blocks
+--------------------------------------------- */
+@media (max-width: 781px) and (min-width: 600px) {
+  /* line 318, sass/blocks/_core-blocks.scss */
+  .wp-block-column .wp-block-column {
+    flex-basis: initial !important;
+    flex-grow: initial;
+  }
+}
+/* Embed blocks
+--------------------------------------------- */
+/* line 326, sass/blocks/_core-blocks.scss */
+.wp-block-embed__wrapper {
+  position: relative;
+}
+/* line 328, sass/blocks/_core-blocks.scss */
+.wp-block-embed__wrapper:before {
+  content: "";
+  display: block;
+  padding-top: 50%;
+}
+/* line 334, sass/blocks/_core-blocks.scss */
+.wp-block-embed__wrapper iframe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 344, sass/blocks/_core-blocks.scss */
+.wp-block-embed.wp-embed-aspect-16-9 .wp-block-embed__wrapper:before {
+  padding-top: 56.25%;
+}
+
+/*------------------------
+# Large Banner Block
+-----------------------*/
+/* line 7, sass/blocks/_custom-blocks.scss */
+.custom-block-large-banner {
+  position: relative;
+}
+/* line 10, sass/blocks/_custom-blocks.scss */
+.custom-block-large-banner .large-banner-image {
+  min-height: 350px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  /* line 10, sass/blocks/_custom-blocks.scss */
+  .custom-block-large-banner .large-banner-image {
+    min-height: 700px;
+  }
+}
+@media (min-width: 768px) {
+  /* line 19, sass/blocks/_custom-blocks.scss */
+  .custom-block-large-banner .large-banner-image.image-desktop {
+    min-height: 840px;
+  }
+}
+@media (min-width: 768px) {
+  /* line 24, sass/blocks/_custom-blocks.scss */
+  .custom-block-large-banner .large-banner-image.image-mobile {
+    display: none;
+  }
+}
+/* line 30, sass/blocks/_custom-blocks.scss */
+.custom-block-large-banner .banner-title {
+  margin-top: 0;
+}
+/* line 33, sass/blocks/_custom-blocks.scss */
+.custom-block-large-banner .large-banner-content {
+  padding: 28px;
+  text-align: left;
+}
+@media (min-width: 768px) {
+  /* line 33, sass/blocks/_custom-blocks.scss */
+  .custom-block-large-banner .large-banner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 56px 8.3333vw;
+    width: 50%;
+    min-height: 360px;
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+  }
+}
+/* line 49, sass/blocks/_custom-blocks.scss */
+.custom-block-large-banner .large-banner-content.content-left {
+  left: 0;
+}
+/* line 51, sass/blocks/_custom-blocks.scss */
+.custom-block-large-banner .large-banner-content.content-right {
+  right: 0;
+}
+/* line 54, sass/blocks/_custom-blocks.scss */
+.custom-block-large-banner .link_wrapper {
+  margin-top: calc(28em / 19);
+}
+
+/*------------------------
+# Features Blocks 2.0
+-----------------------*/
+/* line 155, sass/base/_mixins.scss */
+.custom-block-feature-block:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 72, sass/blocks/_custom-blocks.scss */
+  .feature-wrapper {
+    display: grid;
+    grid-template-areas: "image content";
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+    width: 100vw;
+  }
+}
+/* line 82, sass/blocks/_custom-blocks.scss */
+.alignright .feature-wrapper {
+  grid-template-areas: "content image";
+}
+/* line 155, sass/base/_mixins.scss */
+.alignright .feature-wrapper:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 88, sass/blocks/_custom-blocks.scss */
+.feature-image {
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  /* line 88, sass/blocks/_custom-blocks.scss */
+  .feature-image {
+    grid-area: image;
+    grid-column: 1 / span 5;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 98, sass/blocks/_custom-blocks.scss */
+  .alignright .feature-image {
+    grid-column: 8 / span 5;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 105, sass/blocks/_custom-blocks.scss */
+  .alignleft .feature-image {
+    grid-column: 1 / span 5;
+  }
+}
+/* line 110, sass/blocks/_custom-blocks.scss */
+.feature-image img {
+  width: 100%;
+}
+
+/* line 115, sass/blocks/_custom-blocks.scss */
+.feature-content {
+  margin: 0;
+  text-align: left;
+}
+@media screen and (max-width: 768px) {
+  /* line 115, sass/blocks/_custom-blocks.scss */
+  .feature-content {
+    margin-right: 14px;
+    margin-left: 14px;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 115, sass/blocks/_custom-blocks.scss */
+  .feature-content {
+    grid-area: content;
+    grid-column: 7 / span 4;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 127, sass/blocks/_custom-blocks.scss */
+  .alignright .feature-content {
+    grid-column: 3 / span 4;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 133, sass/blocks/_custom-blocks.scss */
+  .alignleft .feature-content {
+    grid-column: 7 / span 4;
+  }
+}
+/* line 139, sass/blocks/_custom-blocks.scss */
+.feature-content a.feature-button__link {
+  display: inline-block;
+  margin-block-start: 0.5em;
+  margin-block-end: 0;
+  padding: 14px 28px;
+  background: #b8261c;
+  color: white;
+  text-decoration: none;
+  font-size: 18.6666px;
+  line-height: 28px;
+  border-radius: 42px;
+}
+/* line 151, sass/blocks/_custom-blocks.scss */
+.feature-content a.feature-button__link:hover, .feature-content a.feature-button__link:visited {
+  color: white;
+}
+/* line 155, sass/blocks/_custom-blocks.scss */
+.has-miles-red-background-color .feature-content a.feature-button__link, .has-dark-blue-background-color .feature-content a.feature-button__link, .has-black-background-color .feature-content a.feature-button__link {
+  background: white;
+  color: #b8261c !important;
+}
+/* line 165, sass/blocks/_custom-blocks.scss */
+.feature-content .link_wrapper a.link {
+  display: inline-block;
+  margin-right: 28px;
+  color: #b8261c;
+  text-decoration: none;
+}
+@media (min-width: 1350px) {
+  /* line 165, sass/blocks/_custom-blocks.scss */
+  .feature-content .link_wrapper a.link {
+    font-size: 23px;
+  }
+}
+/* line 173, sass/blocks/_custom-blocks.scss */
+.feature-content .link_wrapper a.link:hover {
+  text-decoration: underline;
+}
+/* line 175, sass/blocks/_custom-blocks.scss */
+.feature-content .link_wrapper a.link:last-child {
+  margin-right: 0;
+}
+/* line 177, sass/blocks/_custom-blocks.scss */
+.has-miles-red-background-color .feature-content .link_wrapper a.link, .has-dark-blue-background-color .feature-content .link_wrapper a.link {
+  color: white;
+}
+
+/*------------------------
+# People list block
+-----------------------*/
+/* line 188, sass/blocks/_custom-blocks.scss */
+.custom-block-people {
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-column-gap: 14px;
+}
+@media (min-width: 768px) {
+  /* line 188, sass/blocks/_custom-blocks.scss */
+  .custom-block-people {
+    margin-right: calc(25% - 25vw);
+    margin-left: calc(25% - 25vw);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1350px) {
+  /* line 188, sass/blocks/_custom-blocks.scss */
+  .custom-block-people {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+}
+/* line 204, sass/blocks/_custom-blocks.scss */
+.custom-block-people .block-title {
+  grid-column: 1 / -1;
+}
+/* line 208, sass/blocks/_custom-blocks.scss */
+.custom-block-people figure {
+  margin: 28px 0 14px;
+}
+/* line 211, sass/blocks/_custom-blocks.scss */
+.custom-block-people figure img {
+  width: 100%;
+  filter: gray;
+  /* IE6-9 */
+  -webkit-filter: grayscale(1);
+  /* Google Chrome, Safari 6+ & Opera 15+ */
+  filter: grayscale(1);
+  /* Microsoft Edge and Firefox 35+ */
+}
+/* line 219, sass/blocks/_custom-blocks.scss */
+.custom-block-people article {
+  width: 100%;
+  clear: both;
+  margin-left: 0;
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* line 219, sass/blocks/_custom-blocks.scss */
+  .custom-block-people article {
+    float: left;
+    margin-left: 2.7397260274%;
+    width: 22.9452054795%;
+  }
+}
+/* line 237, sass/blocks/_custom-blocks.scss */
+.custom-block-people a {
+  text-decoration: none;
+  color: #2b353f;
+  font-size: 20px;
+  /*@media (min-width: $large) { 
+   font-size: 20px;
+  } 
+  @media (min-width: $mobile) { 
+   font-size: 18px;
+  } */
+}
+/* line 249, sass/blocks/_custom-blocks.scss */
+.custom-block-people a:hover {
+  color: #b8261c;
+}
+
+/*------------------------
+# Accordion block plugin
+-----------------------*/
+/* line 259, sass/blocks/_custom-blocks.scss */
+.wp-block-pb-accordion-item {
+  outline: none;
+  border-top: solid 1px #2b353f;
+}
+@media (min-width: 768px) {
+  /* line 259, sass/blocks/_custom-blocks.scss */
+  .wp-block-pb-accordion-item {
+    margin: 0 auto;
+    max-width: 66.6666vw;
+  }
+}
+/* line 267, sass/blocks/_custom-blocks.scss */
+.wp-block-pb-accordion-item .c-accordion__title {
+  outline: none;
+  font-size: 23px;
+  padding-left: 28px;
+  margin: 14px 14px;
+}
+@media (min-width: 768px) {
+  /* line 267, sass/blocks/_custom-blocks.scss */
+  .wp-block-pb-accordion-item .c-accordion__title {
+    margin: 21px 105px;
+    padding-left: 70px;
+  }
+}
+@media (max-width: 768px) {
+  /* line 267, sass/blocks/_custom-blocks.scss */
+  .wp-block-pb-accordion-item .c-accordion__title {
+    line-height: 1.3;
+  }
+}
+/* line 283, sass/blocks/_custom-blocks.scss */
+.wp-block-pb-accordion-item .c-accordion__title:after {
+  content: "+";
+  left: 0;
+  right: initial;
+  font-size: 28px;
+  line-height: 0;
+  font-weight: 300;
+  color: #2b353f;
+  font-family: verdana;
+  transition: 250ms cubic-bezier(1, 0.5, 0.2, 0.7);
+}
+/* line 296, sass/blocks/_custom-blocks.scss */
+.wp-block-pb-accordion-item.is-open .c-accordion__title:after {
+  transform: translateY(4px) rotate(135deg);
+}
+/* line 301, sass/blocks/_custom-blocks.scss */
+.wp-block-pb-accordion-item .c-accordion__content {
+  margin: 18px 28px;
+  padding-left: 14px;
+}
+@media (min-width: 768px) {
+  /* line 301, sass/blocks/_custom-blocks.scss */
+  .wp-block-pb-accordion-item .c-accordion__content {
+    margin: 0 105px 42px;
+    padding-left: 70px;
+  }
+}
+/* line 311, sass/blocks/_custom-blocks.scss */
+.wp-block-pb-accordion-item:last-child {
+  border-bottom: solid 1px #2b353f;
+}
+/* line 315, sass/blocks/_custom-blocks.scss */
+.wp-block-pb-accordion-item p {
+  margin-top: 28px;
+  margin-bottom: 28px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+/* line 322, sass/blocks/_custom-blocks.scss */
+.has-miles-red-background-color .wp-block-pb-accordion-item, .has-dark-blue-background-color .wp-block-pb-accordion-item, .has-black-background-color .wp-block-pb-accordion-item {
+  border-top: solid 1px white;
+  color: white;
+}
+/* line 328, sass/blocks/_custom-blocks.scss */
+.has-miles-red-background-color .wp-block-pb-accordion-item:last-child, .has-dark-blue-background-color .wp-block-pb-accordion-item:last-child, .has-black-background-color .wp-block-pb-accordion-item:last-child {
+  border-bottom: solid 1px white;
+}
+/* line 332, sass/blocks/_custom-blocks.scss */
+.has-miles-red-background-color .wp-block-pb-accordion-item h2, .has-dark-blue-background-color .wp-block-pb-accordion-item h2, .has-black-background-color .wp-block-pb-accordion-item h2 {
+  color: white;
+}
+/* line 335, sass/blocks/_custom-blocks.scss */
+.has-miles-red-background-color .wp-block-pb-accordion-item .c-accordion__title:after, .has-dark-blue-background-color .wp-block-pb-accordion-item .c-accordion__title:after, .has-black-background-color .wp-block-pb-accordion-item .c-accordion__title:after {
+  color: white;
+}
+
+/*------------------------
+# Menu city block
+-----------------------*/
+/* line 350, sass/blocks/_custom-blocks.scss */
+.custom-block-menu-city-block ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+/* line 356, sass/blocks/_custom-blocks.scss */
+.custom-block-menu-city-block li.menu-item {
+  position: relative;
+  padding-top: 28.125%;
+  width: 50%;
+  float: left;
+  cursor: pointer;
+  overflow: hidden;
+  border-width: 1px 1px 0 0;
+  border-style: solid;
+  border-color: white;
+  background-color: rgba(184, 38, 28, 0.8);
+  transition: background-color 0.3s ease;
+}
+/* line 371, sass/blocks/_custom-blocks.scss */
+.custom-block-menu-city-block li.menu-item:hover {
+  background-color: transparent;
+}
+/* line 375, sass/blocks/_custom-blocks.scss */
+.custom-block-menu-city-block a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 28px 14px;
+  color: white;
+  text-decoration: none;
+  font-size: 23px;
+}
+@media (min-width: 768px) {
+  /* line 375, sass/blocks/_custom-blocks.scss */
+  .custom-block-menu-city-block a {
+    padding: 28px;
+  }
+}
+/* line 389, sass/blocks/_custom-blocks.scss */
+.custom-block-menu-city-block a:before {
+  content: '/';
+}
+/* line 394, sass/blocks/_custom-blocks.scss */
+.custom-block-menu-city-block figure {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+/* line 402, sass/blocks/_custom-blocks.scss */
+.custom-block-menu-city-block figure img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100 !important;
+  width: 100%;
+}
+@media (min-width: 600px) and (max-width: 768px) {
+  /* line 402, sass/blocks/_custom-blocks.scss */
+  .custom-block-menu-city-block figure img {
+    height: 100%;
+  }
+}
+
+/*------------------------
+# Aventia video block
+-----------------------*/
+/* line 421, sass/blocks/_custom-blocks.scss */
+.custom-block-aventia-video .video-hero-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+/* line 426, sass/blocks/_custom-blocks.scss */
+.custom-block-aventia-video .video-hero-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,109 @@
+/*!
+Theme Name: Miles 2020
+Theme URI: http://underscores.me/
+Author: ignitas.no
+Author URI: http://www.ignitas.no
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: miles_2020
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+Miles 2020 is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Variables
+# Mixins Master
+# Normalize
+# Elements
+# Typography
+# Colors
+# Layout
+	## Header
+	## Footer
+	## Grid
+	## Content-sidebar
+	## Sidebar-content
+# Forms
+	## Forms
+# Navigation
+	## Links buttons
+	## Menus
+	## Mega-menus
+# Modules
+	## Modules
+# Gutenberg blocks
+	## base-style
+	## editor
+	## blocks
+# Wp-Content
+	## Post and Pages
+	## Widgets
+	## Home
+
+--------------------------------------------------------------*/
+@import "variables-site";
+@import "mixins-master";
+@import "normalize";
+@import "elements";
+@import "typography";
+// @import "colors";
+// @import "icons";
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+@import "layout/header";
+@import "layout/footer";
+@import "layout/grid";
+@import "layout/content-sidebar";
+@import "layout/sidebar-content";
+
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+@import "forms/forms";
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+@import "navigation/links-buttons";
+@import "navigation/menus";
+
+/*--------------------------------------------------------------
+# modules
+--------------------------------------------------------------*/
+//@import "modules/modules";
+
+/*--------------------------------------------------------------
+# Gutenberg blocks
+--------------------------------------------------------------*/
+@import "gutenberg-blocks/base-styles";
+@import "gutenberg-blocks/gutenberg";
+@import "gutenberg-blocks/blocks"; 
+
+/*--------------------------------------------------------------
+# Wp-Content
+----------------------------------------------------*/
+@import "wp-content/posts-and-pages";
+@import "wp-content/widgets";
+// @import "wp-content/hero";
+// @import "wp-content/menneskene";
+
+
+

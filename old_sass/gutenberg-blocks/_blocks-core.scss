@@ -1,0 +1,105 @@
+
+/***** Gutenberg grid ****/
+
+/* Main column width */
+.wp-block {
+    max-width: $content-width;
+
+	/* Wide column width */
+	&[data-align="wide"],
+	&[data-align="full"] {
+		max-width: none;
+	}
+}
+
+/*.wp-block {
+	max-width: 804px + 86px;
+
+	&[data-align="wide"],
+	.alignwide {
+		max-width: 836px + 86px;
+	}
+
+	&[data-align="full"],
+	&[data-type="acf/pinterest-cta"],
+	&[data-type="acf/destination"],
+	&[data-type="acf/hplworld-cta"] {
+		max-width: 932px + 86px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+} */
+
+
+/******** Blocks core ******/
+
+// Undo blockquote styles
+.wp-block-quote {
+
+	&:not(.is-style-line) {
+		border-left: 0;
+		padding-left: 0;
+	}
+
+	p {
+
+		font-family: $font__main;
+		font-weight: 500;
+	//	@include font-sizes( 18px, 22px );
+
+	}
+
+}
+
+
+// Undo blockquote styles
+.wp-block-quote:not(.is-large):not(.is-style-large) {
+	border-left: 0;
+	padding-left: 0;
+}
+
+
+
+// Separator
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+	max-width: 100%;
+}
+
+
+// Fix space between image and caption
+.wp-block-image {
+	line-height: 0;
+}
+
+// Full width button
+.wp-block-button.is-style-full,
+.wp-block-button.is-style-full .block-editor-rich-text,
+div[data-type="core/button"] div[data-block] {
+	display: block;
+}
+
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+	max-width: 100%;
+}
+
+.block-library-list ol,
+.block-library-list ul {
+	margin-left: 0;
+}
+
+// Interactive blocks to disable
+.block-post-listing,
+.block-region-destinations,
+.block-quick-links {
+	position: relative;
+
+}
+
+.block-editor-rich-text__editable a {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+
+}

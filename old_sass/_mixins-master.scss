@@ -1,0 +1,111 @@
+
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * 16) * 1px;
+	font-size: $sizeValue * 1rem;
+}
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Clearfix
+@mixin clearfix() {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}
+
+/*================================
+	Grid columns system Mixing
+================================= */
+
+@mixin flexGrid($numPerRow, $margin, $bottom) {
+    width: ((100% - (($numPerRow - 1) * $margin)) / $numPerRow);
+    &:nth-child(n) {
+        margin-right: $margin;
+        margin-bottom: $bottom;
+    }
+    margin-right: $margin;
+    &:nth-child(#{$numPerRow}n) {
+        margin-right: 0;
+        margin-bottom: $bottom;
+    }
+}
+
+/*Include and example:
+.class{
+    display: flex;
+    flex-direction: column;
+     @include flexGrid(1, 5%, 1rem);
+         
+     @media (min-width: $tablet) {
+        @include flexGrid(2, 2%, 2rem);
+    }
+        
+    @media (min-width: $desktop) {
+        @include flexGrid(2, 5%, 3rem);
+    }    
+}
+*/
+
+
+/**
+ * Mixin transition cross browser
+ */
+@mixin anim-transition ($property, $seconds, $ease, $delay) {
+    -webkit-transition: $property $seconds $ease $delay;
+    -moz-transition: $property $seconds $ease $delay;
+    -o-transition: $property $seconds $ease $delay;
+    transition: $property $seconds $ease $delay;
+}
+
+// Fade hover animation buttons
+@mixin fade-hover ($color-trans, $bg-trans){
+  -o-transition:color $color-trans ease-out, background $bg-trans ease-in;
+  -ms-transition:color $color-trans ease-out, background $bg-trans ease-in;
+  -moz-transition:color $color-trans ease-out, background $bg-trans ease-in;
+  -webkit-transition:color $color-trans ease-out, background $bg-trans ease-in;
+  transition:color $color-trans ease-out, background $bg-trans ease-in;
+}
+
+@mixin browsers-animation ($name){
+	@-webkit-keyframes  #{$name} {
+  	0%   {opacity: 0;}
+  	100% {opacity: 1;}
+	}
+	@-moz-keyframes  #{$name} {
+ 	 0%   {opacity: 0;}
+  	100% {opacity: 1;}
+	}
+	@-o-keyframes  #{$name} {
+ 	 0%   {opacity: 0;}
+  	100% {opacity: 1;}
+	}
+	@keyframes  #{$name} {
+  	0%   {opacity: 0;}
+  	100% {opacity: 1;}
+	}
+}
+
+
+/**
+ * Button Reset
+ */
+@mixin button-reset() {
+	background: transparent;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	padding: 0;
+	outline: none;
+	cursor: pointer;
+}

@@ -1,0 +1,154 @@
+
+{"_id":"4f61bfd2875b526717000008","name":"Bergen","selected":true,"default_word_template_id":null,"default_ppt_template_id":null,"cv_template_id":"57a3293d69702d71ef000d8c","cv_template_type":"word","country_id":"5085b1c4a6add17a15000005","country_code":"no","override_language_code":null,"num_users":64}
+{"_id":"61a9cacadffdc2114f4f4c5b","name":"Komponent Bergen","selected":true,"default_word_template_id":null,"default_ppt_template_id":null,"cv_template_id":"57a3293d69702d71ef000d8c","cv_template_type":"word","country_id":"5085b1c4a6add17a15000005","country_code":"no","override_language_code":null,"num_users":12}
+{"_id":"61a9cabfdffdc211534f4cd9","name":"Komponent Oslo","selected":true,"default_word_template_id":null,"default_ppt_template_id":null,"cv_template_id":"57a3293d69702d71ef000d8c","cv_template_type":"word","country_id":"5085b1c4a6add17a15000005","country_code":"no","override_language_code":null,"num_users":1}
+{"_id":"4f61bfce875b52672f00000a","name":"Oslo","selected":true,"default_word_template_id":null,"default_ppt_template_id":null,"cv_template_id":"57a3293d69702d71ef000d8c","cv_template_type":"word","country_id":"5085b1c4a6add17a15000005","country_code":"no","override_language_code":null,"num_users":76}
+{"_id":"4f61bfd6875b52672f00000b","name":"Stavanger","selected":true,"default_word_template_id":null,"default_ppt_template_id":null,"cv_template_id":"57a3293d69702d71ef000d8c","cv_template_type":"word","country_id":"5085b1c4a6add17a15000005","country_code":"no","override_language_code":null,"num_users":60}
+{"_id":"5d5d02f05b734b0ea79e02a6","name":"Trondheim","selected":true,"default_word_template_id":null,"default_ppt_template_id":null,"cv_template_id":"57a3293d69702d71ef000d8c","cv_template_type":"word","country_id":"5085b1c4a6add17a15000005","country_code":"no","override_language_code":null,"num_users":25}
+{"_id":"635789bd6857c00fd739243d","name":"\u00c5lesund","selected":true,"default_word_template_id":null,"default_ppt_template_id":null,"cv_template_id":"57a3293d69702d71ef000d8c","cv_template_type":"word","country_id":"5085b1c4a6add17a15000005","country_code":"no","override_language_code":null,"num_users":8}
+	
+
+
+{
+	"_id": "6425649e5d697e0f43838a16",
+	"id": "6425649e5d697e0f43838a16",
+	"values": {
+		"int": "Architecture",
+		"no": "Arkitektur"
+	},
+	"external_unique_id": "",
+	"custom_tag_category_id": "64256437462c080f2562ca50",
+	"category_ids": [
+		"64256437462c080f2562ca50"
+	]
+},
+{
+	"_id": "64256492480fb50f7b17c2a7",
+	"id": "64256492480fb50f7b17c2a7",
+	"values": {
+		"int": "Back-end",
+		"no": "Backend"
+	},
+	"external_unique_id": "",
+	"custom_tag_category_id": "64256437462c080f2562ca50",
+	"category_ids": [
+		"64256437462c080f2562ca50"
+	]
+},
+{
+	"_id": "642565189b513710125e3deb",
+	"id": "642565189b513710125e3deb",
+	"values": {
+		"int": "Data Science",
+		"no": "Data Science"
+	},
+	"external_unique_id": "",
+	"custom_tag_category_id": "64256437462c080f2562ca50",
+	"category_ids": [
+		"64256437462c080f2562ca50"
+	]
+},
+{
+	"_id": "642564b29b513710125e3dd4",
+	"id": "642564b29b513710125e3dd4",
+	"values": {
+		"int": "Design",
+		"no": "Design"
+	},
+	"external_unique_id": "",
+	"custom_tag_category_id": "64256437462c080f2562ca50",
+	"category_ids": [
+		"64256437462c080f2562ca50"
+	]
+},
+{
+	"_id": "642564849b513710265e3c2c",
+	"id": "642564849b513710265e3c2c",
+	"values": {
+		"int": "Front-end",
+		"no": "Frontend"
+	},
+	"external_unique_id": "",
+	"custom_tag_category_id": "64256437462c080f2562ca50",
+	"category_ids": [
+		"64256437462c080f2562ca50"
+	]
+},
+{
+	"_id": "642564c1d658eb0f9fd23aa0",
+	"id": "642564c1d658eb0f9fd23aa0",
+	"values": {
+		"int": "Project Management",
+		"no": "Prosjektledelse"
+	},
+	"external_unique_id": "",
+	"custom_tag_category_id": "64256437462c080f2562ca50",
+	"category_ids": [
+		"64256437462c080f2562ca50"
+	]
+},
+{
+	"_id": "642565049b51370fe35e3c82",
+	"id": "642565049b51370fe35e3c82",
+	"values": {
+		"int": "Counseling",
+		"no": "Rådgivning"
+	},
+	"external_unique_id": "",
+	"custom_tag_category_id": "64256437462c080f2562ca50",
+	"category_ids": [
+		"64256437462c080f2562ca50"
+	]
+},
+{
+	"_id": "642564e35604610f9f3b9ed9",
+	"id": "642564e35604610f9f3b9ed9",
+	"values": {
+		"int": "Agile",
+		"no": "Smidig"
+	},
+	"external_unique_id": "",
+	"custom_tag_category_id": "64256437462c080f2562ca50",
+	"category_ids": [
+		"64256437462c080f2562ca50"
+	]
+},
+{
+	"_id": "642564d15604610f9d3b9dbc",
+	"id": "642564d15604610f9d3b9dbc",
+	"values": {
+		"int": "Test Management",
+		"no": "Testledelse"
+	},
+	"external_unique_id": "",
+	"custom_tag_category_id": "64256437462c080f2562ca50",
+	"category_ids": [
+		"64256437462c080f2562ca50"
+	]
+},
+{
+	"_id": "642565235d697e0f34838b2e",
+	"id": "642565235d697e0f34838b2e",
+	"values": {
+		"int": "Servant Team",
+		"no": "Tjenerteam"
+	},
+	"external_unique_id": "",
+	"custom_tag_category_id": "64256437462c080f2562ca50",
+	"category_ids": [
+		"64256437462c080f2562ca50"
+	]
+},
+{
+	"_id": "6425646e5604610f973b9d9d",
+	"id": "6425646e5604610f973b9d9d",
+	"values": {
+		"int": "Development",
+		"no": "Utvikling"
+	},
+	"external_unique_id": "",
+	"custom_tag_category_id": "64256437462c080f2562ca50",
+	"category_ids": [
+		"64256437462c080f2562ca50"
+	]
+}

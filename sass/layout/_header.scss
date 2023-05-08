@@ -1,0 +1,89 @@
+.site-header{
+  // background-color: white;
+  position: relative;
+  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s, left 0s;
+     
+   .open-menu & {
+      background-color: $miles_red;
+      height: 100vh;
+   //   overflow-y: auto;
+   }
+  .site-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 14px;
+    @media (min-width: $tablet) {       
+      max-width: $col_11;
+      margin: auto;
+      padding:0;
+    }
+  }
+  .site-branding {
+    width: 96px;
+    height: 32px;
+    margin-top: $base-margin * 2;
+    margin-bottom: $base-margin * 2;
+  }
+  
+  
+  .site-description,
+  .site-title {
+    display: none;
+  } 
+}
+
+// Sticky menu CSS
+
+.fixed {
+  	position:fixed !important;  	
+  	top:-30px;
+  	transform: translate(0,30px);
+  	width:100%;
+  	z-index: 1000;
+  	mix-blend-mode: difference;
+  	
+  	.open-menu & {
+  		mix-blend-mode: normal;
+  		
+  		.miles-logo .st0 {fill: white;}
+  	}
+  	
+  	&:after{
+  		content: " ";
+  		display: block;
+  		width: 100%;
+  		height: 10px;
+  		position: absolute;
+  		bottom: -10px;
+  	}
+  	
+  	@media (min-width: $tablet) {
+ 		 
+ 		 .logged-in & {transform: translate(0,62px);}
+ 	}
+  	
+  	.cities-navigation {display: none;}
+}
+
+// Miles Logo Colors
+
+
+.miles-logo {
+    	
+    .st0 {
+    	fill: $miles-red;
+    	
+    	.open-menu & {fill: white;}
+    	
+    	.fixed & {
+    		fill: #18cCd7;
+    		
+    		//hack for mix-blend-mode background issue in Chrome 58+
+    		
+    		@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) { 
+  				fill: $miles-red;
+  			}
+  		}
+	}
+}

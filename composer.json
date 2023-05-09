@@ -1,12 +1,11 @@
 {
-    "name": "miles/wp-theme",
+    "name": "miles-no/miles-wp-theme",
     "type": "wordpress-theme",
     "description": "This theme is based on the _s starter theme (aka Underscores).",
     "keywords": [
         "WordPress",
         "Themes"
     ],
-    "homepage": "https://github.com/Automattic/_s",
     "license": "GPL-2.0-or-later",
     "authors": [
         {

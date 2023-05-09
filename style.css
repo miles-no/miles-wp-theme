@@ -1059,7 +1059,6 @@ table {
     position: relative;
     top: 6rem;
     margin-bottom: 6rem;
-    overflow-x: hidden;
     margin-top: var(--header-height);
 }
 

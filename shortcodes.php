@@ -2,11 +2,15 @@
 
 include_once "miles_limes.php";
 include_once "shortcode_util.php";
+include_once "RssFeedReader.php";
+
+use miles_podcast\RssFeedReader;
 
 function register_shortcodes(): void
 {
     add_shortcode('show-consultant', 'shortcode_show_consultant');
     add_shortcode('show-consultant-group', 'shortcode_show_consultant_group');
+    add_shortcode('podcast-teaser', 'shortcode_podcast_teaser');
 }
 
 function shortcode_show_consultant($atts): string
@@ -32,6 +36,12 @@ function shortcode_show_consultant_group($atts): string
     }
 
     return $result;
+}
+
+function shortcode_podcast_teaser(){
+    $latestPodcast = (new RssFeedReader())->get_latest_episode();
+
+    return shortcode_util\toWebComponent("miles-podcast-teaser", $latestPodcast, null);
 }
 
 function consultant_to_webcomponent($consultant): array

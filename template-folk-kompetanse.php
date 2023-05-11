@@ -89,7 +89,7 @@ foreach ($custom_tags as $roleKey => $roleId) {
             <ul>
                 <?php foreach ($offices as $office): ?>
                     <li <?php echo $office["class"] ?>>
-                        <miles-button-anchor color="#3F1221"
+                        <miles-button-anchor <?php echo $office["selected"] ? 'selected' : '' ?> color="#3F1221"
                                              href="<?php echo $office['href']; ?>"><?php echo ucfirst($office['name']); ?></miles-button-anchor>
                     </li>
                 <?php endforeach; ?>
@@ -100,7 +100,7 @@ foreach ($custom_tags as $roleKey => $roleId) {
             <ul>
                 <?php foreach ($roles as $role): ?>
                     <li <?php echo $role["class"] ?>>
-                        <miles-button-anchor color="#3F1221"
+                        <miles-button-anchor  <?php echo $role["selected"] ? 'selected' : '' ?> color="#3F1221"
                                              href="<?php echo $role['href']; ?>"><?php echo ucfirst($role['name']); ?></miles-button-anchor>
                     </li>
                 <?php endforeach; ?>

@@ -62,7 +62,7 @@ function shortcode_podcast_episodes($atts): string
         $attributes = array(
             "episode_title" => $episode["episode_title"],
             "published_date" => $episode["published_date"],
-            "url" => $episode["url"],
+            "url" => $episode["mp3_link"],
             "length" => $episode["length"]
         );
 

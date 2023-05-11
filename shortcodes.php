@@ -11,6 +11,7 @@ function register_shortcodes(): void
     add_shortcode('show-consultant', 'shortcode_show_consultant');
     add_shortcode('show-consultant-group', 'shortcode_show_consultant_group');
     add_shortcode('podcast-teaser', 'shortcode_podcast_teaser');
+    add_shortcode('podcast-episodes', 'shortcode_podcast_episodes');
 }
 
 function shortcode_show_consultant($atts): string
@@ -38,10 +39,26 @@ function shortcode_show_consultant_group($atts): string
     return $result;
 }
 
-function shortcode_podcast_teaser(){
+function shortcode_podcast_teaser(): string
+{
     $latestPodcast = (new RssFeedReader())->get_latest_episode();
 
     return shortcode_util\toWebComponent("miles-podcast-teaser", $latestPodcast, null);
+}
+
+function shortcode_podcast_episodes($atts): string
+{
+    $start = $atts["start"] ?? 0;
+    $end = $atts["end"] ?? null;
+
+    $episodes = (new RssFeedReader())->get_episodes();
+    $episodes = array_slice($episodes, $start, $end);
+
+    $result = '';
+    foreach ($episodes as $episode) {
+        $result .= shortcode_util\toWebComponent("miles-podcast-teaser", $episode, null);
+    }
+    return $result;
 }
 
 function consultant_to_webcomponent($consultant): array

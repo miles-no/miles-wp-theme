@@ -20,9 +20,10 @@ class RssFeedReader
             $items[] = array(
                 "episode_title" => $item->title->__toString(),
                 "published_date" => $item->pubDate->__toString(),
-                "link" => $item->link->__toString(),
+                "url" => $item->link->__toString(),
                 "description" => $item->description->__toString(),
                 "length" => $item->enclosure->attributes()["length"]->__toString(),
+                "mp3_link" => $item->enclosure->attributes()["url"]->__toString(),
             );
         }
 

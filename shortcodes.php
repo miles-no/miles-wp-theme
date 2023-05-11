@@ -46,6 +46,9 @@ function shortcode_podcast_teaser(): string
     return shortcode_util\toWebComponent("miles-podcast-teaser", $latestPodcast, null);
 }
 
+/**
+ * @throws Exception
+ */
 function shortcode_podcast_episodes($atts): string
 {
     $start = $atts["start"] ?? 0;
@@ -56,7 +59,16 @@ function shortcode_podcast_episodes($atts): string
 
     $result = '';
     foreach ($episodes as $episode) {
-        $result .= shortcode_util\toWebComponent("miles-podcast-teaser", $episode, null);
+        $attributes = array(
+            "episode_title" => $episode["episode_title"],
+            "published_date" => $episode["published_date"],
+            "url" => $episode["url"],
+            "length" => $episode["length"]
+        );
+
+        $body = podcast_sanitize_description($episode["description"]);
+
+        $result .= shortcode_util\toWebComponent("miles-podcast-card", $attributes, $body);
     }
     return $result;
 }
@@ -71,4 +83,14 @@ function consultant_to_webcomponent($consultant): array
         'email' => $consultant["email"],
         'phone' => $consultant["telephone"],
     );
+}
+
+function podcast_sanitize_description(string $description): string
+{
+    $description = strip_tags($description, '<p>');
+
+    # the last tag contains an avast reference we dont want to show
+    $lastPTag = strrpos($description, "<p>");
+
+    return substr($description, 0, $lastPTag);
 }

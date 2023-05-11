@@ -29,7 +29,7 @@ get_header();
 				<section>
 				<!-- <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/6FfermvFrx6o2ZbrZr7eUZ?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> --> 
 				<!-- <iframe loading="lazy" src="https://embed.acast.com/63d28f41cd0f720011930608?feed=true" frameborder="0" width="100%" height="280px" nuan_newframe="true"></iframe> -->
-					<miles-podcast-teaser></miles-podcast-teaser>
+					[podcast-teaser]
 				</section>
 				
 			

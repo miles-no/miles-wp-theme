@@ -38,7 +38,8 @@
 			</a>
 		</div><!-- .site-branding -->
 
-		  <?php get_template_part( 'template-parts/primary-mega-menu', 'menu' ); ?>
+		
 
 		</div>
 	</header><!-- #masthead -->
+	<?php get_template_part( 'template-parts/primary-mega-menu', 'menu' ); ?>

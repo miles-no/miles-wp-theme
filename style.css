@@ -976,12 +976,12 @@ table {
     width: 100%;
     z-index: 1000;
     mix-blend-mode: normal;
-    position: fixed;
+    /* position: fixed; */
 }
 
 @media (min-width: 768px) {
     .site-header .site-branding a[rel='home'] {
-        position: fixed;
+       /* position: fixed; */
     }
 
     .fixed {
@@ -1017,7 +1017,7 @@ table {
 }
 
 .logged-in .fixed {
-    transform: translate(0, 46px);
+   /*  transform: translate(0, 46px); */
 }
 
 #wpadminbar {
@@ -1027,7 +1027,7 @@ table {
 @media (min-width: 768px) {
     /* line 63, sass/layout/_header.scss */
     .logged-in .fixed {
-        transform: translate(0, 32px);
+      /*  transform: translate(0, 32px); */
     }
 }
 /* line 66, sass/layout/_header.scss */
@@ -1982,7 +1982,7 @@ Other menus
     /* line 184, sass/navigation/_mega-menu.scss */
     .menu-topmenu > .menu-item.has-hamburger > a {
         top: calc((var(--header-height) - 40px) / 2);
-        position: fixed;
+        /* position: fixed; */
         display: flex;
         align-items: center;
         right: 2rem;

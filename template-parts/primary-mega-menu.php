@@ -1,4 +1,5 @@
 
+<miles-site-menu>
 <nav class="main-navigation site-nav">
     <ul id="menu-topmenu" class="menu-topmenu">
 
@@ -41,3 +42,4 @@
         ?>
  	</ul>               		
 </nav>
+</miles-site-menu>

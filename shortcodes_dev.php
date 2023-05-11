@@ -8,6 +8,7 @@ function register_shortcodes_dev(): void
 	add_shortcode('miles-button-anchor', 'miles_button_anchor_shortcode');
 	add_shortcode('miles-business-card', 'miles_business_card_shortcode');
 	add_shortcode('miles-contact-card', 'miles_contact_card_shortcode');
+	add_shortcode('miles-banner', 'miles_banner_shortcode');
 }
 
 
@@ -35,6 +36,19 @@ function miles_button_anchor_shortcode( $atts, $content = null ): string
         $content = '';
     }
     return '<miles-button-anchor '.$props.'>' . $content . '</miles-button-anchor>';
+}
+
+function miles_banner_shortcode( $atts, $content = null ): string 
+{
+	$props = '';
+    foreach ($atts as $prop => $val) {
+		$props .= ' ' . $prop . '="' . $val . '"';
+	}
+
+    if ( $content == null ) {
+        $content = '';
+    }
+    return '<miles-banner '.$props.'>' . $content . '</miles-banner>';
 }
 
 function miles_business_card_shortcode( $atts, $content = null ): string 

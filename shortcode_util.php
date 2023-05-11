@@ -6,7 +6,7 @@ function toWebComponent($componentName, $properties, $body): string
 {
     $result = '<' . $componentName;
     foreach ($properties as $prop => $val) {
-        $result .= ' ' . $prop . '="' . $val . '"';
+        $result .= ' ' . $prop . '="' . strip_tags($val) . '"';
     }
     $result .= '>';
 

@@ -25,11 +25,11 @@ get_header();
 				    <!--screen-reader-text -->
 					<h1 class="page-title"><?php single_post_title(); ?></h1>
 				</header>
-				<?php
-				$block_content = '<!-- wp:block {"ref":9770} /-->';
-				echo do_blocks($block_content);
-				?>
 				<section>
+					<?php
+					$block_content = '<!-- wp:block {"ref":9770} /-->';
+					echo do_blocks($block_content);
+					?>
 					<?php echo shortcode_podcast_teaser() ?>
 				</section>
 				

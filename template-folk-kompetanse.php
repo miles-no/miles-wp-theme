@@ -33,19 +33,14 @@ get_header();
 global $wp;
 $current_url = home_url($wp->request);
 
-$area_of_expertise = array('Utvikling', 'Arkituktur', 'UX/Design', 'Prosjektledelse', 'Smidig', 'Data Science');
-
 $custom_tags = array(
     'Arkitektur' => 'ARCHITECTURE',
-    'Backend' => 'BACKEND',
     'Data Science' => 'DATA_SCIENCE',
     'Design' => 'DESIGN',
-    'Frontend' => 'FRONTEND',
     'Prosjektledelse' => 'PROJECT_MANAGEMENT',
     'Rådgivning' => 'ADVISORY',
     'Smidig' => 'AGILE',
     'Testledelse' => 'TEST_MANAGEMENT',
-    'Tjenerteam' => 'SERVANT_TEAM',
     'Utvikling' => 'DEVELOPMENT'
 );
 
@@ -68,6 +63,7 @@ foreach ($norwegian_offices as $office) {
         'name' => $office['name']
     );
 }
+usort($offices, fn($a, $b) => strcmp($a['name'], $b['name']));
 
 $roles = array();
 foreach ($custom_tags as $roleKey => $roleId) {

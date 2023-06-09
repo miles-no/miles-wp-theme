@@ -18,6 +18,7 @@ class RssFeedReader
         $items = array();
         foreach ($xml->channel->item as $item) {
             $items[] = array(
+                "episode_number" => $item->children('itunes', true)->episode->__toString(),
                 "episode_title" => $item->title->__toString(),
                 "published_date" => $item->pubDate->__toString(),
                 "url" => $item->link->__toString(),

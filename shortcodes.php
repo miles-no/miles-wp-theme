@@ -12,6 +12,7 @@ function register_shortcodes(): void
     add_shortcode('show-consultant-group', 'shortcode_show_consultant_group');
     add_shortcode('podcast-teaser', 'shortcode_podcast_teaser');
     add_shortcode('podcast-episodes', 'shortcode_podcast_episodes');
+    add_shortcode('podcast-one-episode', 'shortcode_podcast_one_episode');
 }
 
 function shortcode_show_consultant($atts): string
@@ -71,6 +72,24 @@ function shortcode_podcast_episodes($atts): string
 
         $result .= shortcode_util\toWebComponent("miles-podcast-card", $attributes, $body);
     }
+    return $result;
+}
+
+/**
+ * @throws Exception
+ */
+function shortcode_podcast_one_episode($atts): string
+{
+    $attributes = array(
+        "episode_number" => $atts["episode_number"],
+        "episode_title" => $atts["episode_title"],
+        "published_date" => $atts["published_date"],
+        "url" => $atts["mp3_link"],
+        "length" => $atts["length"]
+    );
+
+    $body = podcast_sanitize_description($atts["description"]);
+    $result .= shortcode_util\toWebComponent("miles-podcast-card", $attributes, $body);
     return $result;
 }
 

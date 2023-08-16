@@ -545,11 +545,8 @@ h1.has-large-font-size {
 
 /* line 49, sass/base/_typography.scss */
 h1 {
-    width: 33%;
-    /* color: var(--miles_primary_light); */
     font-size: var(--miles-h1);
     line-height: var(--miles-h1-lineheight);
-    /* margin: 56px 0; */
     font-weight: 700;
 }
 

@@ -943,6 +943,11 @@ table {
 .site-footer ul.mks_social_widget_ul a:before {
     color: var(--miles_primary_dark);
 }
+
+.site-footer ul.mks_social_widget_ul a:focus {
+  outline: var(--default_focus);
+}
+
 /* line 1, sass/layout/_header.scss */
 .site-header {
     background-color: var(--miles_primary_dark);

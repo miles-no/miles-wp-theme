@@ -1560,7 +1560,7 @@ a.fagblogg-thumbnail:hover {
 .comment-navigation .nav-links .nav-previous,
 .posts-navigation .nav-links .nav-previous,
 .post-navigation .nav-links .nav-previous {
-    background: url('image/arrow-back-red-1.svg') no-repeat left center;
+    background: url('image/chevron_left.svg') no-repeat left center;
     background-size: 27px;
     padding-left: 36px;
 }
@@ -1570,7 +1570,7 @@ a.fagblogg-thumbnail:hover {
 .post-navigation .nav-links .nav-next {
     margin-left: auto;
     text-align: right;
-    background: url('image/arrow-next-red.svg') no-repeat right center;
+    background: url('image/chevron_right.svg') no-repeat right center;
     background-size: 27px;
     padding-right: 36px;
 }
@@ -1585,6 +1585,7 @@ a.fagblogg-thumbnail:hover {
 .posts-navigation .nav-links a,
 .post-navigation .nav-links a {
     text-decoration: none;
+    color: var(--miles_secondary_four);
 }
 /* line 97, sass/navigation/_nav-links.scss */
 .comment-navigation .nav-links a:hover,

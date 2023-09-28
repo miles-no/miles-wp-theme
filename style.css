@@ -4241,6 +4241,10 @@ miles-office-banner {
     margin-bottom: 4rem;
 }
 
+.page-vi-er-miles .wp-block-group > .wp-block-group__inner-container:first-child {
+    margin-top: 4rem;
+}
+
 .page-fagomrader .miles-button-row > div {
     flex-wrap: wrap;
     flex-direction: row;

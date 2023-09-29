@@ -490,10 +490,10 @@ add_theme_support( 'editor-font-sizes', array(
 		'slug'      => 'small'
 	),
 	array(
-		'name'      => __( 'Regular', 'miles_2020' ),
+		'name'      => __( 'Medium', 'miles_2020' ),
 		'shortName' => __( 'M', 'miles_2020' ),
 		'size'      => 20,
-		'slug'      => 'regular'
+		'slug'      => 'medium'
 	),
 	array(
 		'name'      => __( 'Large', 'miles_2020' ),
@@ -501,7 +501,6 @@ add_theme_support( 'editor-font-sizes', array(
 		'size'      => 24,
 		'slug'      => 'large'
 	),
-
 ) );
 
 add_theme_support( 'disable-custom-font-sizes' );

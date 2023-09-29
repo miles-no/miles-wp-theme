@@ -400,6 +400,26 @@ add_theme_support( 'editor-color-palette', array(
 add_filter( 'wprss_ftp_link_post_title', '__return_true' );
 
 /**
+ * Adjust font sizes
+ */
+function adjust_font_sizes( $settings ) {
+    if ( isset( $settings['fontSizes'] ) && is_array( $settings['fontSizes'] ) ) {
+        foreach ( $settings['fontSizes'] as &$font_size ) {
+            if ( 'medium' === $font_size['slug'] ) {
+                $font_size['size'] = 18;
+            }
+			if ( 'large' === $font_size['slug'] ) {
+                $font_size['size'] = 20;
+            }
+        }
+    }
+    return $settings;
+}
+add_filter( 'block_editor_settings_all', 'adjust_font_sizes' );
+
+
+
+/**
  * Register Custom Blocks 
  *
  */
@@ -492,15 +512,16 @@ add_theme_support( 'editor-font-sizes', array(
 	array(
 		'name'      => __( 'Medium', 'miles_2020' ),
 		'shortName' => __( 'M', 'miles_2020' ),
-		'size'      => 20,
+		'size'      => 18,
 		'slug'      => 'medium'
 	),
 	array(
 		'name'      => __( 'Large', 'miles_2020' ),
 		'shortName' => __( 'L', 'miles_2020' ),
-		'size'      => 24,
+		'size'      => 20,
 		'slug'      => 'large'
 	),
 ) );
+
 
 add_theme_support( 'disable-custom-font-sizes' );

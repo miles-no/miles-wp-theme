@@ -1562,7 +1562,6 @@ a.fagblogg-thumbnail:hover {
 .posts-navigation .nav-links .nav-previous,
 .post-navigation .nav-links .nav-previous {
     background: url('image/chevron_left.svg') no-repeat left center;
-    background-size: 27px;
     padding-left: 36px;
 }
 /* line 84, sass/navigation/_nav-links.scss */
@@ -1572,7 +1571,6 @@ a.fagblogg-thumbnail:hover {
     margin-left: auto;
     text-align: right;
     background: url('image/chevron_right.svg') no-repeat right center;
-    background-size: 27px;
     padding-right: 36px;
 }
 /* line 92, sass/navigation/_nav-links.scss */

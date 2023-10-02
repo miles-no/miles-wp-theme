@@ -554,16 +554,17 @@ h1 {
 h1.entry-title {
     font-weight: 600;
     margin-bottom: 5rem;
+    margin-top: 5rem;
     margin-left: auto;
     margin-right: auto;
-    padding-left: var(--mobile-horizontal-space);
-    padding-right: var(--mobile-horizontal-space);
+    /*padding-left: var(--mobile-horizontal-space);
+    padding-right: var(--mobile-horizontal-space);*/
     width: var(--page-wrap);
 }
 
 @media screen and (min-width: 768px) {
     h1.entry-title {
-        margin-bottom: 10rem;
+        margin-bottom: 4rem;
         width: 100%;
     }
 }
@@ -3362,21 +3363,25 @@ input[type='file']::file-selector-button {
 ****************/
 
 /* line 43, sass/components/_posts-and-pages.scss */
-.single-post .post-thumbnail {
+.single-post .entry-header,
+.single-post .post-thumbnail,
+.single-miles_nyheter .post-thumbnail,
+.single-miles_nyheter .entry-header {
     text-align: center;
-    max-width: 100%;
+    max-width: 66.6666vw;
     margin-left: auto;
     margin-right: auto;
 }
 
-.single-post .entry-header {
+/*.single-post .entry-header,
+.single-miles_nyheter .entry-header {
     text-align: center;
     width: var(--page-wrap);
     margin-left: auto;
     margin-right: auto;
     padding-left: var(--mobile-horizontal-space);
     padding-right: var(--mobile-horizontal-space);
-}
+}*/
 
 /* line 50, sass/components/_posts-and-pages.scss */
 .single-post .entry-header .entry-title,
@@ -3384,13 +3389,22 @@ input[type='file']::file-selector-button {
 .single-post .entry-header .entry-content,
 .single-post .post-thumbnail .entry-title,
 .single-post .post-thumbnail .entry-meta,
-.single-post .post-thumbnail .entry-content {
+.single-post .post-thumbnail .entry-content,
+.single-miles_nyheter .entry-header .entry-title,
+.single-miles_nyheter .entry-header .entry-meta, 
+.single-miles_nyheter .entry-header .entry-content, 
+.single-miles_nyheter .post-thumbnail .entry-title,
+.single-miles_nyheter .post-thumbnail .entry-meta, 
+.single-miles_nyheter .post-thumbnail .entry-content {
     text-align: left;
 }
 /* line 57, sass/components/_posts-and-pages.scss */
 .single-post .entry-meta,
 .single-post .entry-content,
-.single-post .entry-footer {
+.single-post .entry-footer,
+.single-miles_nyheter .entry-meta, 
+.single-miles_nyheter .entry-content, 
+.single-miles_nyheter .entry-footer {
     margin: 28px 14px;
     text-align: left;
 }
@@ -3398,13 +3412,17 @@ input[type='file']::file-selector-button {
     /* line 57, sass/components/_posts-and-pages.scss */
     .single-post .entry-meta,
     .single-post .entry-content,
-    .single-post .entry-footer {
+    .single-post .entry-footer,
+    .single-miles_nyheter .entry-meta, 
+    .single-miles_nyheter .entry-content, 
+    .single-miles_nyheter .entry-footer {
         max-width: calc(calc(var(--content_width) / 3) * 2);
         margin: 42px auto;
     }
 }
 /* line 69, sass/components/_posts-and-pages.scss */
-.single-post .entry-footer {
+.single-post .entry-footer,
+.single-miles_nyheter .entry-footer {
     display: none;
 }
 
@@ -3417,12 +3435,18 @@ footer.entry-footer {
     margin-top: 4rem;
 }
 
-.single-post .entry-meta {
+.single-miles_nyheter h2 {
+    margin-top: 4rem;
+}
+
+.single-post .entry-meta,
+.single-miles_nyheter .entry-meta {
     display: none;
 }
 
 @media (min-width: 768px) {
-    .single-post .wp-block-quote {
+    .single-post .wp-block-quote,
+    .single-miles_nyheter .wp-block-quote {
         display: flex;
         flex-direction: column;
         gap: 2rem;

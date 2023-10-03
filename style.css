@@ -2261,10 +2261,6 @@ Other menus
 /******** Blocks core ******/
 /* Button
 --------------------------------------------- */
-/* line 7, sass/blocks/_core-blocks.scss */
-.wp-block-button {
-    margin: 28px auto !important;
-}
 
 /* line 11, sass/blocks/_core-blocks.scss */
 .wp-block-button__link {

@@ -4,7 +4,7 @@
 
 :root {
     --miles_primary_dark: #b72318; /* Miles-rød */
-    --miles_primary_light: #FCF8F3; /* Krem */
+    --miles_primary_light: #fcf8f3; /* Krem */
     --miles_secondary_one: #004047; /* Sjøgrønn */
     --miles_secondary_two: #78e8db; /* Turkis */
     --miles_secondary_three: #000000; /* Sort */
@@ -477,6 +477,16 @@ template {
 /*--------------------------------------------------------------
 ## Typography
 --------------------------------------------------------------*/
+@font-face {
+    font-family: Manrope;
+    src: url('/wp-content/themes/miles_2020/fonts/Manrope-VariableFont_wght.ttf')
+        format('truetype-variations');
+    /* temporary solution for the newsite. TODO Remove once in production */
+    src: url('https://www.miles.no/newsite/wp-content/themes/miles_2020/fonts/Manrope-VariableFont_wght.ttf')
+        format('truetype-variations');
+    font-weight: 1 999;
+}
+
 /*--------------------------------------------------------------
   ## Site strucure
 -------------------------------------------------------------- */
@@ -493,20 +503,7 @@ $block-vertical-margin: 140px;*/
 /*--------------------------------------------------------------
 ## Breakpoints
 --------------------------------------------------------------*/
-/*
-@font-face {
-  font-family: Manrope;
-  src: url("/wp-content/themes/miles_2020/fonts/CircularStd-Book.otf") format("opentype");
-  src: url("/wp-content/themes/miles_2020/fonts/CircularStd-Book.woff2") format("woff2"), url("/wp-content/themes/miles_2020/fonts/CircularStd-Book.ttf") format("truetype"), url("/wp-content/themes/miles_2020/fonts/CircularStd-Book.svg#svgFontName") format("svg");
-  font-weight: 400;
-}
-@font-face {
-  font-family: Circular;
-  src: url("/wp-content/themes/miles_2020/fonts/CircularStd-Bold.otf") format("opentype");
-  src: url("/wp-content/themes/miles_2020/fonts/CircularStd-Bold.woff2") format("woff2"), url("/wp-content/themes/miles_2020/fonts/CircularStd-Bold.ttf") format("truetype"), url("/wp-content/themes/miles_2020/fonts/CircularStd-Bold.svg#svgFontName") format("svg");
-  font-weight: 700;
-}
-*/
+
 /* line 18, sass/base/_typography.scss */
 html,
 body,
@@ -805,7 +802,7 @@ table {
 # Accessibility
 --------------------------------------------------------------*/
 :focus {
-  outline: var(--default_focus)
+    outline: var(--default_focus);
 }
 
 /**
@@ -863,14 +860,14 @@ table {
 /* line 8, sass/layout/_footer.scss */
 .site-footer a:link,
 .site-footer a:visited {
-  color: white;
+    color: white;
 }
 
 .site-footer a:hover,
 .site-footer a:focus {
-  color: var(--miles_link_color_ondark_hover);
-  background-color: var(--miles_link_color_ondark_hover_bg);
-  outline: var(--miles_link_color_ondark_hover_bg);
+    color: var(--miles_link_color_ondark_hover);
+    background-color: var(--miles_link_color_ondark_hover_bg);
+    outline: var(--miles_link_color_ondark_hover_bg);
 }
 
 /* line 13, sass/layout/_footer.scss */
@@ -943,7 +940,7 @@ table {
 }
 
 .site-footer ul.mks_social_widget_ul a:focus {
-  outline: var(--default_focus);
+    outline: var(--default_focus);
 }
 
 /* line 1, sass/layout/_header.scss */
@@ -978,8 +975,8 @@ table {
 }
 /* line 22, sass/layout/_header.scss */
 .site-header .site-branding {
-    padding-top: .75rem;
-    padding-bottom: .75rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
 }
 /* line 30, sass/layout/_header.scss */
 .site-header .site-description,
@@ -1538,7 +1535,6 @@ a.fagblogg-thumbnail:hover {
     font-size: 1rem;
     line-height: 1.5;
 }
-
 
 /* line 65, sass/navigation/_nav-links.scss */
 .single-menneskene .comment-navigation .nav-links,
@@ -2829,7 +2825,6 @@ img.aligncenter {
     clear: both;
 }
 
-
 .feature-wrapper {
     display: flex;
     flex-direction: column;
@@ -3129,14 +3124,14 @@ img.aligncenter {
 }
 /* line 335, sass/blocks/_custom-blocks.scss */
 .has-miles-red-background-color
-.wp-block-pb-accordion-item
-.c-accordion__title:after,
+    .wp-block-pb-accordion-item
+    .c-accordion__title:after,
 .has-dark-blue-background-color
-.wp-block-pb-accordion-item
-.c-accordion__title:after,
+    .wp-block-pb-accordion-item
+    .c-accordion__title:after,
 .has-black-background-color
-.wp-block-pb-accordion-item
-.c-accordion__title:after {
+    .wp-block-pb-accordion-item
+    .c-accordion__title:after {
     color: white;
 }
 
@@ -3589,7 +3584,10 @@ footer.entry-footer {
     margin: auto;
     width: var(--page-wrap);
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(max(260px,(100% - 3 * 1.5rem) / 4), 1fr));
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(max(260px, (100% - 3 * 1.5rem) / 4), 1fr)
+    );
     gap: 1.5rem;
     padding-left: var(--mobile-horizontal-space);
     padding-right: var(--mobile-horizontal-space);
@@ -3954,14 +3952,34 @@ input[type='submit']:focus {
 .cv-filter {
     margin: 4em auto;
     gap: 3rem 2rem;
-    grid-template-columns: repeat(auto-fill, minmax(max(var(--profile-card-width), (100% - (var(--cv-filter-max-columns) - 1) * 2rem) / var(--cv-filter-max-columns)), 1fr));
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(
+            max(
+                var(--profile-card-width),
+                (100% - (var(--cv-filter-max-columns) - 1) * 2rem) /
+                    var(--cv-filter-max-columns)
+            ),
+            1fr
+        )
+    );
     display: grid;
 }
 
 @media (max-width: 576px) {
     .cv-filter {
         gap: 1rem;
-        grid-template-columns: repeat(auto-fill, minmax(max(var(--profile-card-width-phone), (100% - (var(--cv-filter-max-columns) - 1) * 2rem) / var(--cv-filter-max-columns)), 1fr));
+        grid-template-columns: repeat(
+            auto-fill,
+            minmax(
+                max(
+                    var(--profile-card-width-phone),
+                    (100% - (var(--cv-filter-max-columns) - 1) * 2rem) /
+                        var(--cv-filter-max-columns)
+                ),
+                1fr
+            )
+        );
     }
 }
 
@@ -4112,8 +4130,8 @@ miles-podcast-teaser {
     width: 200px;
 }
 
-#primary miles-banner[icon]::part(banner-image)  {
-    background-position: left
+#primary miles-banner[icon]::part(banner-image) {
+    background-position: left;
 }
 
 /**
@@ -4138,21 +4156,36 @@ miles-fagblogg-teaser .wp-block-latest-posts__list {
     }
 }
 
-miles-fagblogg-teaser .wp-block-latest-posts__list li .wp-block-latest-posts__post-title,
-miles-fagblogg-teaser .wp-block-latest-posts__list li .wp-block-latest-posts__post-author,
-miles-fagblogg-teaser .wp-block-latest-posts__list li .wp-block-latest-posts__post-date {
+miles-fagblogg-teaser
+    .wp-block-latest-posts__list
+    li
+    .wp-block-latest-posts__post-title,
+miles-fagblogg-teaser
+    .wp-block-latest-posts__list
+    li
+    .wp-block-latest-posts__post-author,
+miles-fagblogg-teaser
+    .wp-block-latest-posts__list
+    li
+    .wp-block-latest-posts__post-date {
     padding: 0 2rem;
     color: var(--miles_primary_light);
     background-color: var(--miles_secondary_four);
     display: block;
 }
 
-miles-fagblogg-teaser .wp-block-latest-posts__list li .wp-block-latest-posts__post-date {
+miles-fagblogg-teaser
+    .wp-block-latest-posts__list
+    li
+    .wp-block-latest-posts__post-date {
     border-radius: 0 0 30px 30px;
     padding-bottom: 2rem;
 }
 
-miles-fagblogg-teaser .wp-block-latest-posts__list li .wp-block-latest-posts__post-title {
+miles-fagblogg-teaser
+    .wp-block-latest-posts__list
+    li
+    .wp-block-latest-posts__post-title {
     padding-top: 1.5rem;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -4168,13 +4201,16 @@ miles-fagblogg-teaser .wp-block-latest-posts__list li {
 }
 
 /* miles-fagblogg-teaser Focus style */
-miles-fagblogg-teaser .wp-block-latest-posts__list li:focus-within>*:not(:first-child) {
-  color: var(--miles_link_color_ondark);
-  background-color: var(--miles_link_color_ondark_hover);
+miles-fagblogg-teaser
+    .wp-block-latest-posts__list
+    li:focus-within
+    > *:not(:first-child) {
+    color: var(--miles_link_color_ondark);
+    background-color: var(--miles_link_color_ondark_hover);
 }
 
 miles-fagblogg-teaser .wp-block-latest-posts__list li a:focus {
-  outline: none;
+    outline: none;
 }
 
 miles-fagblogg-teaser .wp-block-latest-posts__list li img {
@@ -4236,7 +4272,8 @@ miles-office-banner {
   MILES PAGES
   */
 
-.page-fagomrader miles-info-block,  .page-vi-er-miles miles-image-block {
+.page-fagomrader miles-info-block,
+.page-vi-er-miles miles-image-block {
     margin-bottom: 4rem;
 }
 

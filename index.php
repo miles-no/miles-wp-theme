@@ -49,16 +49,14 @@ get_header();
 
 			?>
             </section>
+			<section class="blog-pagination"> 
+                <?php
+				the_posts_navigation();
+                ?>
+            </section>
             <section>
                 <?php echo shortcode_podcast_teaser() ?>
             </section>
-            <section class="blog-pagination">
-                <?php
-                the_posts_navigation();
-                ?>
-            </section>
-
-
             <?php
 
 		else :

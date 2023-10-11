@@ -3607,7 +3607,6 @@ footer.entry-footer {
 }
 
 /* line 5, sass/components/_archives.scss */
-.archive header,
 .blog > header,
 .blog .latestpodcast {
     width: var(--page-wrap);
@@ -3631,7 +3630,7 @@ footer.entry-footer {
 }
 
 /* line 9, sass/components/_archives.scss */
-.archive .site-main,
+.archive .site-main .blog-grid,
 .blog .site-main .blog-grid {
     margin: auto;
     width: var(--page-wrap);

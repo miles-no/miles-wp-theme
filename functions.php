@@ -498,6 +498,44 @@ function be_register_blocks() {
 }
 add_action('acf/init', 'be_register_blocks' );
 
+//Settings for the "Nyheter" page (archive-miles_nyheter)
+function customizer_miles_archive_settings( $wp_customize ) {
+
+    $wp_customize->add_section( 'miles_archive_section', array(
+        'title'       => __( 'News settings', 'textdomain' ),
+        'priority'    => 30,
+    ) );
+
+     // title
+     $wp_customize->add_setting( 'miles_archive_title', array(
+        'default'           => 'Nyheter',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+
+    // title control
+    $wp_customize->add_control( 'miles_archive_title', array(
+        'label'    => __( 'Title', 'textdomain' ),
+        'section'  => 'miles_archive_section',
+        'type'     => 'text',
+    ) );
+
+    //description
+    $wp_customize->add_setting( 'miles_archive_description', array(
+        'default'     => '',
+        'sanitize_callback' => 'wp_kses_post',
+    ) );
+
+    // description control
+    $wp_customize->add_control( 'miles_archive_description', array(
+        'label'       => __( 'Description', 'textdomain' ),
+        'section'     => 'miles_archive_section',
+        'type'        => 'textarea',
+    ) );
+
+}
+add_action( 'customize_register', 'customizer_miles_archive_settings' );
+
+
 
  
 // Adds support for editor font sizes.

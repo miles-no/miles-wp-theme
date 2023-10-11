@@ -3644,6 +3644,10 @@ footer.entry-footer {
     padding-right: var(--mobile-horizontal-space);
 }
 
+.archive .site-main .pre-entry-content p {
+    padding-bottom: 2rem;
+}
+
 @media (min-width: 1025px) and (max-width: 1472px) {
     .blog .site-main .blog-grid {
         padding-right: var(--legacy-desktop-resolutions-horizontal-space);

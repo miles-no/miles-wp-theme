@@ -1548,7 +1548,8 @@ a.fagblogg-thumbnail:hover {
 .comment-navigation .nav-links,
 .posts-navigation .nav-links,
 .post-navigation .nav-links {
-    flex-direction: row;
+    flex-direction: row-reverse;
+    justify-content: space-between;
     width: var(--page-wrap);
     display: flex;
     max-width: calc(100% - 2rem);
@@ -1583,17 +1584,15 @@ a.fagblogg-thumbnail:hover {
 .comment-navigation .nav-links .nav-previous,
 .posts-navigation .nav-links .nav-previous,
 .post-navigation .nav-links .nav-previous {
-    background: url('image/chevron_left.svg') no-repeat left center;
-    padding-left: 36px;
+    background: url('image/chevron_right.svg') no-repeat right center;
+    padding-right: 36px;
 }
 /* line 84, sass/navigation/_nav-links.scss */
 .comment-navigation .nav-links .nav-next,
 .posts-navigation .nav-links .nav-next,
 .post-navigation .nav-links .nav-next {
-    margin-left: auto;
-    text-align: right;
-    background: url('image/chevron_right.svg') no-repeat right center;
-    padding-right: 36px;
+    background: url('image/chevron_left.svg') no-repeat left center;
+    padding-left: 26px;
 }
 /* line 92, sass/navigation/_nav-links.scss */
 .comment-navigation .nav-links .nav-subtitle,

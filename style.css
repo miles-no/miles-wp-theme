@@ -1100,13 +1100,6 @@ table {
     }
 }
 
-.entry-content miles-image-slider {
-    width: 100dvw;
-    transform: translateX(-50%);
-    position: relative;
-    left: 50%;
-}
-
 .pre-entry-content {
     margin: 6rem auto 0;
     padding: 0 var(--mobile-horizontal-space);

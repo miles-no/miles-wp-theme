@@ -1550,10 +1550,14 @@ a.fagblogg-thumbnail:hover {
     margin-left: auto;
 }
 
-.comment-navigation .nav-links a,
+.comment-navigation .nav-links a {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
 .posts-navigation .nav-links a,
 .post-navigation .nav-links a {
-    font-size: 1rem;
+    font-size: 1.25rem;
     line-height: 1.5;
 }
 

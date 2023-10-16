@@ -50,9 +50,14 @@ get_header();
 			?>
             </section>
 			<section class="blog-pagination"> 
-                <?php
-				the_posts_navigation();
-                ?>
+            	<?php
+					the_posts_navigation(
+						array(
+							'prev_text' => __( 'Eldre innlegg' ),
+							'next_text' => __( 'Nyere innlegg' ),
+						)
+					);
+            	?>
             </section>
             <section>
                 <?php echo shortcode_podcast_teaser() ?>

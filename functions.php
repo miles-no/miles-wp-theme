@@ -366,9 +366,14 @@ add_theme_support( 'editor-color-palette', array(
 		'color'	=> '#2b353f',
 	),
 	array(
+		'name'  => __( 'Miles red 10%', 'miles_2020' ),
+		'slug'  => 'miles-red-10',
+		'color' => '#f8ebe8',
+	),
+	array(
 		'name'  => __( 'Miles red', 'miles_2020' ),
 		'slug'  => 'miles-red',
-		'color' => '#b8261c',
+		'color' => '#b72318',
 	),
 	array(
 		'name'  => __( 'Dark blue', 'miles_2020' ),

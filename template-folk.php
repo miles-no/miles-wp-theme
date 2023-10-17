@@ -14,17 +14,33 @@
 /* define( 'WP_DEBUG', true ); */
 get_header();
 
+function findEmployeeByName($name, $employees) {
+  $nameParts = explode("-", $name); // Split the name into parts
+  foreach ($employees as $employee) {
+    $employeeName = $employee['name'];
+    $found = true;
+    foreach ($nameParts as $part) {
+      if (stripos($employeeName, $part) === false) { // Check if the part is not found in the employee name
+        $found = false;
+        break;
+      }
+    }
+    if ($found) {
+      return $employee; // Return the employee if all parts are found in the name
+    }
+  }
+  return $employees[0]; // Return the first element if no match is found
+}
+
 function format_query_vars()
 {
-	require_once ABSPATH . 'wp-includes/query.php';
-	require_once ABSPATH . 'wp-includes/query.php';
 	$employeeName = get_query_var('employeeName');
 	$employeeName = str_replace('-', '+', $employeeName);
 	return 'name=' . $employeeName;
 }
 
 // call our API (make sure API is set up in admin area)
-$users = wpgetapi_endpoint( 
+$usersRes = wpgetapi_endpoint( 
 	'cvpartner_miles_wordpress',
 	'users_search',
 	array(
@@ -37,9 +53,10 @@ $cv = null;
 
 // if we have found users, get the full CV from the first user
 // we assume that the first user is the best match
-if ($users && $users != 'null') {
+if ($usersRes && $usersRes != 'null') {
 
-	$userObject = json_decode($users, true)[0];
+	$users = json_decode($usersRes, true);
+	$userObject = findEmployeeByName(get_query_var('employeeName'), $users);
 
 	$cv = wpgetapi_endpoint(
 		'cvpartner_miles_wordpress',
@@ -62,16 +79,21 @@ if (!$cv || $cv == 'null') {
 	$name = $cvObject["name"];
 	$email = $cvObject["email"];
 	$phone = $cvObject["telephone"];
-	$rol = $cvObject["title"]["name"];
+	$rol = $cvObject["title"]["no"];
 	$firstCategory = $cvObject["office"]["name"];
-	$image = $cvObject["image"]["fit_thumb"]["url"];
+	$image = $cvObject["image"]/* ["thumb"] */["url"];
 	$keyQualifications = $cvObject["key_qualifications"];
 
 	$enabledKeyQualification = array_filter($keyQualifications, function ($keyQualification) {
 		return $keyQualification["disable"] == false;
-	})[0];
+	});
 
-	$longDescription = $enabledKeyQualification["long_description"]["no"];
+	$longDescription = null;
+
+	/* if (count($enabledKeyQualification) > 0) {
+		$enabledKeyQualification = $enabledKeyQualification[0];
+		$longDescription = $enabledKeyQualification["long_description"]["no"];
+	} */
 }
 
 ?>

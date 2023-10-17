@@ -366,9 +366,14 @@ add_theme_support( 'editor-color-palette', array(
 		'color'	=> '#2b353f',
 	),
 	array(
+		'name'  => __( 'Miles red 10%', 'miles_2020' ),
+		'slug'  => 'miles-red-10',
+		'color' => '#f8ebe8',
+	),
+	array(
 		'name'  => __( 'Miles red', 'miles_2020' ),
 		'slug'  => 'miles-red',
-		'color' => '#b8261c',
+		'color' => '#b72318',
 	),
 	array(
 		'name'  => __( 'Dark blue', 'miles_2020' ),
@@ -497,6 +502,44 @@ function be_register_blocks() {
 
 }
 add_action('acf/init', 'be_register_blocks' );
+
+//Settings for the "Nyheter" page (archive-miles_nyheter)
+function customizer_miles_archive_settings( $wp_customize ) {
+
+    $wp_customize->add_section( 'miles_archive_section', array(
+        'title'       => __( 'News settings', 'textdomain' ),
+        'priority'    => 30,
+    ) );
+
+     // title
+     $wp_customize->add_setting( 'miles_archive_title', array(
+        'default'           => 'Nyheter',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+
+    // title control
+    $wp_customize->add_control( 'miles_archive_title', array(
+        'label'    => __( 'Title', 'textdomain' ),
+        'section'  => 'miles_archive_section',
+        'type'     => 'text',
+    ) );
+
+    //description
+    $wp_customize->add_setting( 'miles_archive_description', array(
+        'default'     => '',
+        'sanitize_callback' => 'wp_kses_post',
+    ) );
+
+    // description control
+    $wp_customize->add_control( 'miles_archive_description', array(
+        'label'       => __( 'Description', 'textdomain' ),
+        'section'     => 'miles_archive_section',
+        'type'        => 'textarea',
+    ) );
+
+}
+add_action( 'customize_register', 'customizer_miles_archive_settings' );
+
 
 
  

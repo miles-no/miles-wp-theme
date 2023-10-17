@@ -1550,10 +1550,14 @@ a.fagblogg-thumbnail:hover {
     margin-left: auto;
 }
 
-.comment-navigation .nav-links a,
+.comment-navigation .nav-links a {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
 .posts-navigation .nav-links a,
 .post-navigation .nav-links a {
-    font-size: 1rem;
+    font-size: 1.25rem;
     line-height: 1.5;
 }
 
@@ -3599,7 +3603,6 @@ footer.entry-footer {
 }
 
 /* line 5, sass/components/_archives.scss */
-.archive header,
 .blog > header,
 .blog .latestpodcast {
     width: var(--page-wrap);
@@ -3623,7 +3626,7 @@ footer.entry-footer {
 }
 
 /* line 9, sass/components/_archives.scss */
-.archive .site-main,
+.archive .site-main .blog-grid,
 .blog .site-main .blog-grid {
     margin: auto;
     width: var(--page-wrap);
@@ -3635,6 +3638,10 @@ footer.entry-footer {
     gap: 1.5rem;
     padding-left: var(--mobile-horizontal-space);
     padding-right: var(--mobile-horizontal-space);
+}
+
+.archive .site-main .pre-entry-content p {
+    padding-bottom: 2rem;
 }
 
 @media (min-width: 1025px) and (max-width: 1472px) {
@@ -4230,6 +4237,17 @@ miles-fagblogg-teaser
     color: var(--miles_primary_light);
     background-color: var(--miles_secondary_four);
     display: block;
+}
+
+miles-fagblogg-teaser
+    .wp-block-latest-posts__list
+    li
+    .wp-block-latest-posts__post-author,
+miles-fagblogg-teaser
+    .wp-block-latest-posts__list
+    li
+    .wp-block-latest-posts__post-date {
+    font-size: .925rem !important;
 }
 
 miles-fagblogg-teaser

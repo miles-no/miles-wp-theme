@@ -4235,6 +4235,17 @@ miles-fagblogg-teaser
 miles-fagblogg-teaser
     .wp-block-latest-posts__list
     li
+    .wp-block-latest-posts__post-author,
+miles-fagblogg-teaser
+    .wp-block-latest-posts__list
+    li
+    .wp-block-latest-posts__post-date {
+    font-size: .925rem !important;
+}
+
+miles-fagblogg-teaser
+    .wp-block-latest-posts__list
+    li
     .wp-block-latest-posts__post-date {
     border-radius: 0 0 30px 30px;
     padding-bottom: 2rem;

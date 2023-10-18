@@ -119,7 +119,7 @@ function consultant_as_webcomponent( $consultant, $hidden ): array {
             <span>Kontor</span>
             <ul>
             <miles-filter-button filter="" color="#3F1221"
-                                             href="<?php echo $current_url; ?>">Vis alle</miles-filter-button>
+                                             href="<?php echo $current_url; ?>">Alle</miles-filter-button>
                 <?php foreach ($offices as $office): ?>
                     <li <?php echo $office["class"] ?>>
                         <miles-filter-button filter="<?php echo $office['officeId']; ?>" <?php echo $office["selected"] ? 'selected' : '' ?> color="#3F1221"
@@ -132,7 +132,7 @@ function consultant_as_webcomponent( $consultant, $hidden ): array {
             <span>Fagområder</span>
             <ul>
             <miles-filter-button filter="" color="#3F1221"
-                                             href="<?php echo $current_url; ?>">Vis alle</miles-filter-button>
+                                             href="<?php echo $current_url; ?>">Alle</miles-filter-button>
                 <?php foreach ($roles as $role): ?>
                     <li <?php echo $role["class"] ?>>
                     <miles-filter-button filter="<?php echo $role['roleId']; ?>" <?php echo $role["selected"] ? 'selected' : '' ?> color="#3F1221"

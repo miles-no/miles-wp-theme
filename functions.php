@@ -568,3 +568,28 @@ add_theme_support( 'editor-font-sizes', array(
 
 
 add_theme_support( 'disable-custom-font-sizes' );
+
+// Add custom query variable for employee page
+
+function custom_add_query_vars( $vars ) {
+	$vars[] = 'employeeName';
+	return $vars;
+}
+add_filter('query_vars','custom_add_query_vars');
+
+function custom_add_rewrite_rules() {
+	add_rewrite_rule('^folkene/([^/]*)/?', 'index.php?employeeName=$matches[1]', 'top');
+}
+add_action('init','custom_add_rewrite_rules');
+
+function custom_template_redirect( $template ) {
+	if( get_query_var('employeeName') ) {
+			// Use the path to your custom template in the following line
+			$new_template = locate_template( array( 'template-folk.php' ) );
+			if( '' != $new_template ) {
+					return $new_template;
+			}
+	}
+	return $template;
+}
+add_filter( 'template_include', 'custom_template_redirect' );

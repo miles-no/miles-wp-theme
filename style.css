@@ -2554,6 +2554,14 @@ img.aligncenter {
     /* background-color: var(--miles_primary_dark) !important; */
 }
 
+.has-miles-red-10-color {
+    color: #f8ebe8;
+}
+
+.has-miles-red-10-background-color {
+    background-color: #f8ebe8;
+}
+
 /* line 256, sass/blocks/_core-blocks.scss */
 .has-silver-color {
     color: #b5bbc4 !important;
@@ -3402,10 +3410,10 @@ input[type='file']::file-selector-button {
 .single-post .post-thumbnail .entry-meta,
 .single-post .post-thumbnail .entry-content,
 .single-miles_nyheter .entry-header .entry-title,
-.single-miles_nyheter .entry-header .entry-meta, 
-.single-miles_nyheter .entry-header .entry-content, 
+.single-miles_nyheter .entry-header .entry-meta,
+.single-miles_nyheter .entry-header .entry-content,
 .single-miles_nyheter .post-thumbnail .entry-title,
-.single-miles_nyheter .post-thumbnail .entry-meta, 
+.single-miles_nyheter .post-thumbnail .entry-meta,
 .single-miles_nyheter .post-thumbnail .entry-content {
     text-align: left;
 }
@@ -3413,8 +3421,8 @@ input[type='file']::file-selector-button {
 .single-post .entry-meta,
 .single-post .entry-content,
 .single-post .entry-footer,
-.single-miles_nyheter .entry-meta, 
-.single-miles_nyheter .entry-content, 
+.single-miles_nyheter .entry-meta,
+.single-miles_nyheter .entry-content,
 .single-miles_nyheter .entry-footer {
     margin: 28px 14px;
     text-align: left;
@@ -3424,8 +3432,8 @@ input[type='file']::file-selector-button {
     .single-post .entry-meta,
     .single-post .entry-content,
     .single-post .entry-footer,
-    .single-miles_nyheter .entry-meta, 
-    .single-miles_nyheter .entry-content, 
+    .single-miles_nyheter .entry-meta,
+    .single-miles_nyheter .entry-content,
     .single-miles_nyheter .entry-footer {
         max-width: calc(calc(var(--content_width) / 3) * 2);
         margin: 42px auto;
@@ -3469,40 +3477,33 @@ footer.entry-footer {
 ********************/
 /* line 78, sass/components/_posts-and-pages.scss */
 .menneskene {
-    /*
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: auto;
-  grid-template-areas: "header image" "content" "footer";
-  */
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 'header image' 'content' 'footer';
 }
 @media screen and (min-width: 768px) {
     /* line 78, sass/components/_posts-and-pages.scss */
     .menneskene {
-        /*
-    grid-column-gap: 28px;
-    grid-row-gap: 28px;
-    */
+        grid-column-gap: 28px;
+        grid-row-gap: 28px;
     }
 }
 @media screen and (min-width: 768px) {
     /* line 92, sass/components/_posts-and-pages.scss */
     .menneskene .person-header {
-        /*
-    grid-area: header;
-    grid-column: 2 / span 10;
-    grid-row: 2 / span 1;
-    */
+        grid-area: header;
+        grid-column: 2 / span 10;
+        grid-row: 2 / span 1;
     }
 }
 @media screen and (min-width: 1025px) {
     /* line 92, sass/components/_posts-and-pages.scss */
     .menneskene .person-header {
-        /*
-    grid-column: 3 / span 3;
-    grid-row: 1 / span 1;
-    align-self: center;
-    */
+        grid-column: 3 / span 3;
+        grid-row: 1 / span 1;
+        align-self: center;
     }
 }
 /* line 106, sass/components/_posts-and-pages.scss */
@@ -3530,6 +3531,8 @@ footer.entry-footer {
 }
 /* line 122, sass/components/_posts-and-pages.scss */
 .menneskene .person-thumbnail {
+    aspect-ratio: 1 !important;
+    border-radius: 50%;
     min-height: 280px;
     background-position: 71%;
     background-repeat: no-repeat;
@@ -3558,6 +3561,9 @@ footer.entry-footer {
     grid-area: content;
     grid-column: 1 / span 12;
     grid-row: 3 / span 1;
+}
+.menneskene .entry-content p {
+    line-height: 28px;
 }
 @media screen and (min-width: 768px) {
     /* line 141, sass/components/_posts-and-pages.scss */
@@ -4247,7 +4253,7 @@ miles-fagblogg-teaser
     .wp-block-latest-posts__list
     li
     .wp-block-latest-posts__post-date {
-    font-size: .925rem !important;
+    font-size: 0.925rem !important;
 }
 
 miles-fagblogg-teaser
@@ -4353,7 +4359,9 @@ miles-office-banner {
     margin-bottom: 4rem;
 }
 
-.page-vi-er-miles .wp-block-group > .wp-block-group__inner-container:first-child {
+.page-vi-er-miles
+    .wp-block-group
+    > .wp-block-group__inner-container:first-child {
     margin-top: 4rem;
 }
 

@@ -77,11 +77,11 @@ if (!$cv || $cv == 'null') {
 	$cvObject = json_decode($cv, true);
 
 	$name = $cvObject["name"];
-	$email = $cvObject["email"];
-	$phone = $cvObject["telephone"];
+	$email = null/* $cvObject["email"] */;
+	$phone = null/* $cvObject["telephone"] */;
 	$rol = $cvObject["title"]["no"];
 	$firstCategory = $cvObject["office"]["name"];
-	$image = $cvObject["image"]/* ["thumb"] */["url"];
+	$image = $cvObject["image"]["url"];
 	$keyQualifications = $cvObject["key_qualifications"];
 
 	$enabledKeyQualification = array_filter($keyQualifications, function ($keyQualification) {
@@ -90,10 +90,10 @@ if (!$cv || $cv == 'null') {
 
 	$longDescription = null;
 
-	/* if (count($enabledKeyQualification) > 0) {
+	if (count($enabledKeyQualification) > 0) {
 		$enabledKeyQualification = $enabledKeyQualification[0];
 		$longDescription = $enabledKeyQualification["long_description"]["no"];
-	} */
+	}
 }
 
 ?>

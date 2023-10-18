@@ -3477,6 +3477,9 @@ footer.entry-footer {
 ********************/
 /* line 78, sass/components/_posts-and-pages.scss */
 .menneskene {
+    margin: auto;
+    width: var(--content_width);
+    max-width: var(--content_width_max);
     margin-top: 2rem;
     display: grid;
     grid-template-columns: repeat(12, 1fr);

@@ -118,7 +118,7 @@ function consultant_as_webcomponent( $consultant, $hidden ): array {
         <div class="miles_offices_bar cv-filter-tags" aria-description="Våre kontor i Norge." aria-label="Kontor">
             <span>Kontor</span>
             <ul>
-            <miles-filter-button filter="" selected color="#3F1221"
+            <miles-filter-button filter="" color="#3F1221"
                                              href="<?php echo $current_url; ?>">Vis alle</miles-filter-button>
                 <?php foreach ($offices as $office): ?>
                     <li <?php echo $office["class"] ?>>
@@ -131,7 +131,7 @@ function consultant_as_webcomponent( $consultant, $hidden ): array {
         <div class="miles_areas_bar cv-filter-tags" aria-description="Hva vi er gode på." aria-label="Fagområder">
             <span>Fagområder</span>
             <ul>
-            <miles-filter-button filter="" selected color="#3F1221"
+            <miles-filter-button filter="" color="#3F1221"
                                              href="<?php echo $current_url; ?>">Vis alle</miles-filter-button>
                 <?php foreach ($roles as $role): ?>
                     <li <?php echo $role["class"] ?>>

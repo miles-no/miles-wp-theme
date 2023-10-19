@@ -719,6 +719,7 @@ body {
 
 /* line 6, sass/base/_elements.scss */
 p {
+    max-width: 55ch;
     margin-block-start: calc(28em / 19);
     margin-block-end: calc(28em / 19);
 }
@@ -1042,12 +1043,6 @@ table {
     margin-bottom: 6rem;
     min-height: 100vh;
     overflow-x: hidden;
-}
-
-.site-main > p,
-.pre-entry-content > p,
-.wp-block-group .wp-block-group__inner-container > p {
-    max-width: 70rem;
 }
 
 /*--------------------------------------------------------------

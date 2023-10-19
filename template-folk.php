@@ -84,9 +84,13 @@ if (!$cv || $cv == 'null') {
 	$image = $cvObject["image"]["url"];
 	$keyQualifications = $cvObject["key_qualifications"];
 
-	$enabledKeyQualification = array_filter($keyQualifications, function ($keyQualification) {
-		return $keyQualification["disable"] == false;
-	});
+	$enabledKeyQualification = [];
+
+	if ($keyQualifications && count($keyQualifications) > 0) {
+		$enabledKeyQualification = array_filter($keyQualifications, function ($keyQualification) {
+			return $keyQualification["disable"] == false;
+		});
+	}
 
 	$longDescription = null;
 

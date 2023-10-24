@@ -2516,7 +2516,7 @@ img.aligncenter {
 /* line 218, sass/blocks/_core-blocks.scss */
 .wp-block-image figcaption {
     text-align: left;
-    font-size: 14px;
+    font-size: 0.9375rem;
     font-style: normal;
     margin-top: 14px;
     line-height: 1.5;

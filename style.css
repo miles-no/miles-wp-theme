@@ -3470,6 +3470,10 @@ footer.entry-footer {
     }
 }
 
+.single-post > .site > .site-main > article {
+    max-width: 1200px;
+    margin: 0 auto;
+}
 /**********************
 # Single Menneskene
 ********************/

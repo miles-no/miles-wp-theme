@@ -3479,6 +3479,88 @@ footer.entry-footer {
     font-size: 1.125rem;
 }
 
+/* line 33, sass/layout/_grid.scss */
+.custom-block-large-banner {
+    margin-right: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw);
+    max-width: 100vw;
+    width: 100vw;
+  }
+  
+  /* line 57, sass/blocks/_base.scss */
+.custom-block-large-banner .has-dark-blue-background-color {
+    background-color: rgba(5, 29, 52, 0.9);
+  }
+
+  /*------------------------
+# Large Banner Block
+-----------------------*/
+/* line 7, sass/blocks/_custom-blocks.scss */
+.custom-block-large-banner {
+    position: relative;
+  }
+  /* line 10, sass/blocks/_custom-blocks.scss */
+  .custom-block-large-banner .large-banner-image {
+    min-height: 350px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin: 0;
+  }
+  @media (min-width: 768px) {
+    /* line 10, sass/blocks/_custom-blocks.scss */
+    .custom-block-large-banner .large-banner-image {
+      min-height: 700px;
+    }
+  }
+  @media (min-width: 768px) {
+    /* line 19, sass/blocks/_custom-blocks.scss */
+    .custom-block-large-banner .large-banner-image.image-desktop {
+      min-height: 840px;
+    }
+  }
+  @media (min-width: 768px) {
+    /* line 24, sass/blocks/_custom-blocks.scss */
+    .custom-block-large-banner .large-banner-image.image-mobile {
+      display: none;
+    }
+  }
+  /* line 30, sass/blocks/_custom-blocks.scss */
+  .custom-block-large-banner .banner-title {
+    margin-top: 0;
+  }
+  /* line 33, sass/blocks/_custom-blocks.scss */
+  .custom-block-large-banner .large-banner-content {
+    padding: 28px;
+    text-align: left;
+  }
+  @media (min-width: 768px) {
+    /* line 33, sass/blocks/_custom-blocks.scss */
+    .custom-block-large-banner .large-banner-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 56px 8.3333vw;
+      width: 50%;
+      min-height: 360px;
+      position: absolute;
+      z-index: 10;
+      bottom: 0;
+    }
+  }
+  /* line 49, sass/blocks/_custom-blocks.scss */
+  .custom-block-large-banner .large-banner-content.content-left {
+    left: 0;
+  }
+  /* line 51, sass/blocks/_custom-blocks.scss */
+  .custom-block-large-banner .large-banner-content.content-right {
+    right: 0;
+  }
+  /* line 54, sass/blocks/_custom-blocks.scss */
+  .custom-block-large-banner .link_wrapper {
+    margin-top: calc(28em / 19);
+  }
+  
 /**********************
 # Single Menneskene
 ********************/

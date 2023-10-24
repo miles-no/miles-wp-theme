@@ -3474,6 +3474,11 @@ footer.entry-footer {
     max-width: 1200px;
     margin: 0 auto;
 }
+
+.single-post > .site > .site-main > article > .entry-content > p {
+    font-size: 1.125rem;
+}
+
 /**********************
 # Single Menneskene
 ********************/

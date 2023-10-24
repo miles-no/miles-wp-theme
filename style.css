@@ -2852,33 +2852,42 @@ img.aligncenter {
     margin: 2rem auto 2rem auto;
 }
 
+.feature-wrapper > .feature-image > img {
+    object-fit: "contain";
+}
+
+.alignright .feature-wrapper {
+    grid-template-areas: "content image"
+}
+
 /* line 88, sass/blocks/_custom-blocks.scss */
 .feature-image {
     margin: 0;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
     /* line 88, sass/blocks/_custom-blocks.scss */
-    .feature-image {
-        /*
-    grid-area: image;
-    grid-column: 1 / span 5;
-    */
-    }
+    .feature-wrapper {
+        display: grid;
+        grid-template-areas:
+          "image content";
+        grid-template-columns: repeat(12, 1fr);
+        align-items: center;
+        width: 100%;
+      }
+      .feature-image {
+        grid-area: image;
+      }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
     /* line 98, sass/blocks/_custom-blocks.scss */
     .alignright .feature-image {
-        /*
-    grid-column: 8 / span 5;
-    */
+        grid-column: 8 / span 5;
     }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
     /* line 105, sass/blocks/_custom-blocks.scss */
     .alignleft .feature-image {
-        /*
-    grid-column: 1 / span 5;
-    */
+        grid-column: 1 / span 5;
     }
 }
 /* line 110, sass/blocks/_custom-blocks.scss */
@@ -2891,36 +2900,30 @@ img.aligncenter {
     margin: 0;
     text-align: left;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     /* line 115, sass/blocks/_custom-blocks.scss */
     .feature-content {
         margin-right: 14px;
         margin-left: 14px;
     }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
     /* line 115, sass/blocks/_custom-blocks.scss */
     .feature-content {
-        /*
     grid-area: content;
     grid-column: 7 / span 4;
-    */
     }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
     /* line 127, sass/blocks/_custom-blocks.scss */
     .alignright .feature-content {
-        /*
-    grid-column: 3 / span 4;
-    */
+        grid-column: 1 / span 6;
     }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
     /* line 133, sass/blocks/_custom-blocks.scss */
     .alignleft .feature-content {
-        /*
-    grid-column: 7 / span 4;
-    */
+        grid-column: 7 / span 6;
     }
 }
 /* line 139, sass/blocks/_custom-blocks.scss */

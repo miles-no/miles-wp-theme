@@ -4352,10 +4352,14 @@ miles-office-banner {
   MILES PAGES
   */
 
-.page-fagomrader miles-info-block,
 .page-vi-er-miles miles-image-block {
     margin-bottom: 4rem;
 }
+
+.page-fagomrader miles-info-block {
+    padding-top: 5rem;
+}
+
 
 .page-vi-er-miles
     .wp-block-group

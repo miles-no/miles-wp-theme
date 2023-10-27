@@ -99,15 +99,16 @@ foreach ($custom_tags as $roleKey => $roleId) {
 
 function consultant_as_webcomponent( $consultant, $hidden ): array {
 	return array(
-		'name'     => $consultant["name"],
-		'location' => $consultant["office"],
-		'jobtitle' => $consultant["title"],
-		'image'    => $consultant["imageUrlThumbnail"],
-		'email'    => $consultant["email"],
-		'phone'    => $consultant["telephone"],
-        'roles'    => implode(',', $consultant["roles"]),
-        'officeId' => $consultant['officeId'],
-        'class'    => $hidden ? "class='hidden'" : null,
+        'name'         => $consultant["name"],
+        'location'     => $consultant["office"],
+        'jobtitle'     => $consultant["title"],
+        'image'        => $consultant["imageUrlThumbnail"],
+        'email'        => $consultant["email"],
+        'phone'        => $consultant["telephone"],
+        'roles'        => implode(',', $consultant["roles"]),
+        'officeId'     => $consultant['officeId'],
+        'class'        => $hidden ? "class='hidden'" : null,
+        'preloadimage' => true,
 	);
 }
 

@@ -4418,3 +4418,38 @@ form.wpcf7-form input.wpcf7-submit {
         width: auto;
     }
 }
+
+/**
+ * Custom pagination controls for Milespodden
+ *
+ */
+.pagination-wrapper {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pagination-wrapper .nav-prev.alignleft {
+    text-align: left;
+    flex: 1;
+}
+.pagination-wrapper .nav-next.alignright {
+    text-align: right;
+    flex: 1;
+}
+
+.pagination-wrapper .nav-next a,
+.pagination-wrapper .nav-prev a {
+    text-decoration: none;
+    color: var(--miles_secondary_four);
+    font-size: 1.25rem;
+}
+
+.pagination-wrapper .nav-prev.alignleft:only-child {
+    margin-right: auto;
+}
+
+.pagination-wrapper .nav-next.alignright:only-child {
+    margin-left: auto;
+}

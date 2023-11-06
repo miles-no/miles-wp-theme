@@ -98,6 +98,7 @@ foreach ($custom_tags as $roleKey => $roleId) {
     
 
 function consultant_as_webcomponent( $consultant, $hidden ): array {
+    $profile_url = $_SERVER['REQUEST_URI'] . str_replace(' ', '-', $consultant["name"]);
 	return array(
         'name'         => $consultant["name"],
         'location'     => $consultant["office"],
@@ -107,6 +108,7 @@ function consultant_as_webcomponent( $consultant, $hidden ): array {
         'phone'        => $consultant["telephone"],
         'roles'        => implode(',', $consultant["roles"]),
         'officeId'     => $consultant['officeId'],
+        'profileurl'   => $profile_url,
         'class'        => $hidden ? "class='hidden'" : null,
         'preloadimage' => true,
 	);

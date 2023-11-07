@@ -19,14 +19,14 @@ if( !empty($block['align']) ) {
  ?>
  
 <div id="custom-block-large-banner" class="custom-block-large-banner <?php echo esc_attr($className); ?>">
-<div class="front-slogan">
+<!--<div class="front-slogan">
   <h1>
     <span>Miles -</span>
     faglig autoritet og varme
   </h1>
   <p>Ditt konsulentselskap - Vi dekker et bredt spekter av IT - kompetanse.</p>
   
-</div>
+</div>-->
   <figure class="large-banner-image image-desktop<?php if( $image_mobile ): ?> no-tablet<?php endif; ?>" style="background-image: url('<?php echo $image_desktop['sizes']['hero']; ?>');"> 
   </figure>
    <?php if( $image_mobile ): ?> 
@@ -35,7 +35,6 @@ if( !empty($block['align']) ) {
      </figure>
   <?php endif; ?>
 
-  <!--
   <?php if( $banner_title ): ?> 
     <div class="large-banner-content <?php echo $background_color; ?> <?php echo $text_color; ?> content-<?php echo $banner_position ?>">      
         <h2 class="banner-title">
@@ -66,5 +65,4 @@ if( !empty($block['align']) ) {
     	<?php endif; ?>  
     </div> 
   <?php endif; ?>
-  -->
 </div>

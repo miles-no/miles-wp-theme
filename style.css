@@ -4557,3 +4557,18 @@ form.wpcf7-form input.wpcf7-submit {
 .pagination-wrapper .nav-next.alignright:only-child {
     margin-left: auto;
 }
+
+/* Custom red text link - front page */
+.custom-link a{
+    text-decoration: none;
+    color: var(--miles_primary_dark);
+}
+
+.custom-link a:hover {
+    text-decoration: underline;
+    background-color: transparent;
+}
+
+.custom-link a:visited {
+    color: var(--miles_primary_dark);
+}

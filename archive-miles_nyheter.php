@@ -24,6 +24,9 @@ get_header();
                 if( $description ) {
                     echo '<p class="has-medium-font-size">' . $description . '</p>';
                 }
+				else {
+					echo '<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>';
+				}
                 //the_archive_title( '<h1>', '</h1>' );
 				//the_archive_description( '<p class="has-medium-font-size">', '</p>' );
 				?>

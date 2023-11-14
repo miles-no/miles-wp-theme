@@ -4489,6 +4489,12 @@ miles-office-banner {
     font-size: 2rem;
 }
 
+.page-profil .wp-block-group__inner-container {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 @media (max-width: 1665px) {
     .page-profil .wp-block-columns {
       flex-direction: column;

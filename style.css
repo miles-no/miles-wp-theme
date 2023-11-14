@@ -4489,6 +4489,24 @@ miles-office-banner {
     font-size: 2rem;
 }
 
+@media (max-width: 1665px) {
+    .page-profil .wp-block-columns {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .page-profil .wp-block-columns .wp-block-column {
+      width: 100%;
+      flex-basis: auto;
+    }
+  
+    .page-profil .wp-block-columns .wp-block-column img {
+      width: auto;
+      max-width: 100%;
+      height: auto; 
+    }
+  }
+
 /* WP CONTACT FORMS 7 */
 form.wpcf7-form {
     width: 100%;

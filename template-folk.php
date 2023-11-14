@@ -84,35 +84,30 @@ if (!$cv || $cv == 'null') {
 	$image = $cvObject["image"]["url"];
 	$keyQualifications = $cvObject["key_qualifications"];
 
-	$enabledKeyQualification = [];
-
-	if ($keyQualifications && count($keyQualifications) > 0) {
-		$enabledKeyQualification = array_filter($keyQualifications, function ($keyQualification) {
-			return $keyQualification["disable"] == false;
-		});
-	}
-
-	$longDescription = null;
-
-	if (count($enabledKeyQualification) > 0) {
-		$enabledKeyQualification = $enabledKeyQualification[0];
-		$longDescription = $enabledKeyQualification["long_description"]["no"];
+	$summary = null;
+	foreach ($keyQualifications as $qualification) {
+		if (strtolower($qualification['label']['no']) == "miles.no" ) {
+			$summary = $qualification['long_description']['no'];
+			break;
+		}
+		else if (strtolower($qualification['label']['int']) == "miles.no" ){
+			$summary = $qualification['long_description']['int'];
+			break;
+		}
 	}
 }
-
 ?>
 
 <main id="primary" class="site-main">
 	<section class="menneskene type-menneskene status-publish format-standard hentry">
 		<header class="person-header">
-
 			<div class="person-meta-data">
 				<div class="name">
 					<?php echo $name; ?>
 				</div>
 				<div class="title-location">
-					<?php echo $rol; ?>,
-					<?php echo $firstCategory ?>
+					<?php echo $rol; ?>
+					<?php echo ',' . $firstCategory ?>
 				</div>
 				<div class="email">
 					<?php echo $email; ?>
@@ -130,7 +125,7 @@ if (!$cv || $cv == 'null') {
 
 		<div class="entry-content">
 			<p>
-				<?php echo $longDescription; ?>
+				<?php echo $summary; ?>
 			</p>
 		</div><!-- .entry-content -->
 

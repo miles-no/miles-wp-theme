@@ -593,3 +593,21 @@ function custom_template_redirect( $template ) {
 	return $template;
 }
 add_filter( 'template_include', 'custom_template_redirect' );
+
+/**
+ * Adds Dimension support
+ *
+ * @param array $editor_settings
+ * @param object $editor_context
+ * @return array $editor_settings
+ */
+function superlist_block_padding_margin_theme_support( $editor_settings, $editor_context ) {
+	if ( ! empty( $editor_context->post ) ) {
+			$editor_settings["enableCustomSpacing"] = true;
+$editor_settings["__experimentalFeatures"]["spacing"]["margin"] = true;
+
+	}
+	return $editor_settings;
+}
+
+add_filter( 'block_editor_settings_all', 'superlist_block_padding_margin_theme_support', 10, 2 );

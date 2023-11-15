@@ -718,7 +718,10 @@ body {
 }
 
 /* line 6, sass/base/_elements.scss */
-p, li, span, figcaption {
+p,
+li,
+span,
+figcaption {
     max-width: 55ch;
     margin-block-start: calc(28em / 19);
     margin-block-end: calc(28em / 19);
@@ -2866,7 +2869,7 @@ img.aligncenter {
 }
 
 .alignright .feature-wrapper {
-    grid-template-areas: "content image"
+    grid-template-areas: 'content image';
 }
 
 /* line 88, sass/blocks/_custom-blocks.scss */
@@ -2877,15 +2880,14 @@ img.aligncenter {
     /* line 88, sass/blocks/_custom-blocks.scss */
     .feature-wrapper {
         display: grid;
-        grid-template-areas:
-          "image content";
+        grid-template-areas: 'image content';
         grid-template-columns: repeat(12, 1fr);
         align-items: center;
         width: 100%;
-      }
-      .feature-image {
+    }
+    .feature-image {
         grid-area: image;
-      }
+    }
 }
 @media screen and (min-width: 1024px) {
     /* line 98, sass/blocks/_custom-blocks.scss */
@@ -2919,8 +2921,8 @@ img.aligncenter {
 @media screen and (min-width: 1024px) {
     /* line 115, sass/blocks/_custom-blocks.scss */
     .feature-content {
-    grid-area: content;
-    grid-column: 7 / span 4;
+        grid-area: content;
+        grid-column: 7 / span 4;
     }
 }
 @media screen and (min-width: 1024px) {
@@ -3495,82 +3497,82 @@ footer.entry-footer {
     margin-left: calc(50% - 50vw);
     max-width: 100vw;
     width: 100vw;
-  }
-  
-  /* line 57, sass/blocks/_base.scss */
+}
+
+/* line 57, sass/blocks/_base.scss */
 .custom-block-large-banner .has-dark-blue-background-color {
     background-color: rgba(5, 29, 52, 0.9);
-  }
+}
 
-  /*------------------------
+/*------------------------
 # Large Banner Block
 -----------------------*/
 /* line 7, sass/blocks/_custom-blocks.scss */
 .custom-block-large-banner {
     position: relative;
-  }
-  /* line 10, sass/blocks/_custom-blocks.scss */
-  .custom-block-large-banner .large-banner-image {
+}
+/* line 10, sass/blocks/_custom-blocks.scss */
+.custom-block-large-banner .large-banner-image {
     min-height: 350px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     margin: 0;
-  }
-  @media (min-width: 768px) {
+}
+@media (min-width: 768px) {
     /* line 10, sass/blocks/_custom-blocks.scss */
     .custom-block-large-banner .large-banner-image {
-      min-height: 700px;
+        min-height: 700px;
     }
-  }
-  @media (min-width: 768px) {
+}
+@media (min-width: 768px) {
     /* line 19, sass/blocks/_custom-blocks.scss */
     .custom-block-large-banner .large-banner-image.image-desktop {
-      min-height: 840px;
+        min-height: 840px;
     }
-  }
-  @media (min-width: 768px) {
+}
+@media (min-width: 768px) {
     /* line 24, sass/blocks/_custom-blocks.scss */
     .custom-block-large-banner .large-banner-image.image-mobile {
-      display: none;
+        display: none;
     }
-  }
-  /* line 30, sass/blocks/_custom-blocks.scss */
-  .custom-block-large-banner .banner-title {
+}
+/* line 30, sass/blocks/_custom-blocks.scss */
+.custom-block-large-banner .banner-title {
     margin-top: 0;
-  }
-  /* line 33, sass/blocks/_custom-blocks.scss */
-  .custom-block-large-banner .large-banner-content {
+}
+/* line 33, sass/blocks/_custom-blocks.scss */
+.custom-block-large-banner .large-banner-content {
     padding: 28px;
     text-align: left;
-  }
-  @media (min-width: 768px) {
+}
+@media (min-width: 768px) {
     /* line 33, sass/blocks/_custom-blocks.scss */
     .custom-block-large-banner .large-banner-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 56px 8.3333vw;
-      width: 50%;
-      min-height: 360px;
-      position: absolute;
-      z-index: 10;
-      bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 56px 8.3333vw;
+        width: 50%;
+        min-height: 360px;
+        position: absolute;
+        z-index: 10;
+        bottom: 0;
     }
-  }
-  /* line 49, sass/blocks/_custom-blocks.scss */
-  .custom-block-large-banner .large-banner-content.content-left {
+}
+/* line 49, sass/blocks/_custom-blocks.scss */
+.custom-block-large-banner .large-banner-content.content-left {
     left: 0;
-  }
-  /* line 51, sass/blocks/_custom-blocks.scss */
-  .custom-block-large-banner .large-banner-content.content-right {
+}
+/* line 51, sass/blocks/_custom-blocks.scss */
+.custom-block-large-banner .large-banner-content.content-right {
     right: 0;
-  }
-  /* line 54, sass/blocks/_custom-blocks.scss */
-  .custom-block-large-banner .link_wrapper {
+}
+/* line 54, sass/blocks/_custom-blocks.scss */
+.custom-block-large-banner .link_wrapper {
     margin-top: calc(28em / 19);
-  }
-  
+}
+
 /**********************
 # Single Menneskene
 ********************/
@@ -4464,7 +4466,6 @@ miles-office-banner {
     padding-top: 5rem;
 }
 
-
 .page-vi-er-miles
     .wp-block-group
     > .wp-block-group__inner-container:first-child {
@@ -4497,21 +4498,21 @@ miles-office-banner {
 
 @media (max-width: 1665px) {
     .page-profil .wp-block-columns {
-      flex-direction: column;
-      align-items: center;
+        flex-direction: column;
+        align-items: center;
     }
-  
+
     .page-profil .wp-block-columns .wp-block-column {
-      width: 100%;
-      flex-basis: auto;
+        width: 100%;
+        flex-basis: auto;
     }
-  
+
     .page-profil .wp-block-columns .wp-block-column img {
-      width: auto;
-      max-width: 100%;
-      height: auto; 
+        width: auto;
+        max-width: 100%;
+        height: auto;
     }
-  }
+}
 
 /* WP CONTACT FORMS 7 */
 form.wpcf7-form {
@@ -4583,7 +4584,7 @@ form.wpcf7-form input.wpcf7-submit {
 }
 
 /* Custom red text link - front page */
-.custom-link a{
+.custom-link a {
     text-decoration: none;
     color: var(--miles_primary_dark);
 }
@@ -4595,4 +4596,24 @@ form.wpcf7-form input.wpcf7-submit {
 
 .custom-link a:visited {
     color: var(--miles_primary_dark);
+}
+
+/* Override feature wrapper styles for overlap block on front page */
+.miles-overlap-block .feature-wrapper {
+    display: block;
+    font-size: 22px;
+}
+
+.miles-overlap-block .feature-wrapper .feature-content h2.feature-title {
+    font-size: 40px;
+}
+
+.miles-overlap-block .feature-wrapper .feature-content .link_wrapper {
+    text-align: end;
+}
+
+.miles-overlap-block .feature-wrapper .feature-content .list_wrapper li {
+    margin-block-end: unset;
+    margin-block-start: unset;
+    margin-bottom: 16px;
 }

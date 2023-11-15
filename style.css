@@ -1492,7 +1492,6 @@ a:hover,
 a:focus,
 a:active {
     color: var(--miles_link_color_hover);
-    background-color: var(--miles_link_color_hover_bg);
 }
 /* line 14, sass/navigation/_nav-links.scss */
 a:focus {

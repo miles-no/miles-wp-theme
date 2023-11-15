@@ -32,6 +32,11 @@ function findEmployeeByName($name, $employees) {
   return $employees[0]; // Return the first element if no match is found
 }
 
+function page_not_found() {
+	status_header(404);
+	get_template_part('404');
+}
+
 function format_query_vars()
 {
 	$employeeName = get_query_var('employeeName');
@@ -76,13 +81,13 @@ if ($cv) {
 	$cvObject = json_decode($cv, true);
 
 	if ($cvObject['status'] == 404) {
-		status_header(404);
-		get_template_part('404');
+		page_not_found();
 		exit();
 	}
 
 	set_query_var('cv', $cvObject);
 	get_template_part('template-parts/content-consultant');
 	get_footer();
+} else {
+	page_not_found();
 }
-?>

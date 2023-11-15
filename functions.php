@@ -579,11 +579,13 @@ add_filter('query_vars','custom_add_query_vars');
 
 function custom_add_rewrite_rules() {
 	add_rewrite_rule('^folkene/([^/]*)/?', 'index.php?employeeName=$matches[1]', 'top');
+	add_rewrite_rule('^ansatte/([^/]*)/?', 'index.php?employeeName=$matches[1]', 'top');
+    add_rewrite_rule('^utvikling/ansatte/([^/]*)/?', 'index.php?employeeName=$matches[1]', 'top');
 }
 add_action('init','custom_add_rewrite_rules');
 
 function custom_template_redirect( $template ) {
-	if( get_query_var('employeeName') ) {
+    if( get_query_var('employeeName') ) {
 			// Use the path to your custom template in the following line
 			$new_template = locate_template( array( 'template-folk.php' ) );
 			if( '' != $new_template ) {

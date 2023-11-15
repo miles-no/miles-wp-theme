@@ -718,10 +718,19 @@ body {
 }
 
 /* line 6, sass/base/_elements.scss */
-p {
+p, li, span, figcaption {
     max-width: 55ch;
     margin-block-start: calc(28em / 19);
     margin-block-end: calc(28em / 19);
+}
+
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {
+    max-width: 55ch;
 }
 
 /* line 12, sass/base/_elements.scss */
@@ -2507,7 +2516,7 @@ img.aligncenter {
 /* line 218, sass/blocks/_core-blocks.scss */
 .wp-block-image figcaption {
     text-align: left;
-    font-size: 14px;
+    font-size: 0.9375rem;
     font-style: normal;
     margin-top: 14px;
     line-height: 1.5;
@@ -2852,33 +2861,42 @@ img.aligncenter {
     margin: 2rem auto 2rem auto;
 }
 
+.feature-wrapper > .feature-image > img {
+    object-fit: contain;
+}
+
+.alignright .feature-wrapper {
+    grid-template-areas: "content image"
+}
+
 /* line 88, sass/blocks/_custom-blocks.scss */
 .feature-image {
     margin: 0;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
     /* line 88, sass/blocks/_custom-blocks.scss */
-    .feature-image {
-        /*
-    grid-area: image;
-    grid-column: 1 / span 5;
-    */
-    }
+    .feature-wrapper {
+        display: grid;
+        grid-template-areas:
+          "image content";
+        grid-template-columns: repeat(12, 1fr);
+        align-items: center;
+        width: 100%;
+      }
+      .feature-image {
+        grid-area: image;
+      }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
     /* line 98, sass/blocks/_custom-blocks.scss */
     .alignright .feature-image {
-        /*
-    grid-column: 8 / span 5;
-    */
+        grid-column: 8 / span 5;
     }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
     /* line 105, sass/blocks/_custom-blocks.scss */
     .alignleft .feature-image {
-        /*
-    grid-column: 1 / span 5;
-    */
+        grid-column: 1 / span 5;
     }
 }
 /* line 110, sass/blocks/_custom-blocks.scss */
@@ -2891,36 +2909,30 @@ img.aligncenter {
     margin: 0;
     text-align: left;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     /* line 115, sass/blocks/_custom-blocks.scss */
     .feature-content {
         margin-right: 14px;
         margin-left: 14px;
     }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
     /* line 115, sass/blocks/_custom-blocks.scss */
     .feature-content {
-        /*
     grid-area: content;
     grid-column: 7 / span 4;
-    */
     }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
     /* line 127, sass/blocks/_custom-blocks.scss */
     .alignright .feature-content {
-        /*
-    grid-column: 3 / span 4;
-    */
+        grid-column: 1 / span 6;
     }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
     /* line 133, sass/blocks/_custom-blocks.scss */
     .alignleft .feature-content {
-        /*
-    grid-column: 7 / span 4;
-    */
+        grid-column: 7 / span 6;
     }
 }
 /* line 139, sass/blocks/_custom-blocks.scss */
@@ -3467,6 +3479,98 @@ footer.entry-footer {
     }
 }
 
+.single-post > .site > .site-main > article {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.single-post article .entry-content p,
+.single-post article .entry-content li {
+    font-size: 1.125rem;
+}
+
+/* line 33, sass/layout/_grid.scss */
+.custom-block-large-banner {
+    margin-right: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw);
+    max-width: 100vw;
+    width: 100vw;
+  }
+  
+  /* line 57, sass/blocks/_base.scss */
+.custom-block-large-banner .has-dark-blue-background-color {
+    background-color: rgba(5, 29, 52, 0.9);
+  }
+
+  /*------------------------
+# Large Banner Block
+-----------------------*/
+/* line 7, sass/blocks/_custom-blocks.scss */
+.custom-block-large-banner {
+    position: relative;
+  }
+  /* line 10, sass/blocks/_custom-blocks.scss */
+  .custom-block-large-banner .large-banner-image {
+    min-height: 350px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin: 0;
+  }
+  @media (min-width: 768px) {
+    /* line 10, sass/blocks/_custom-blocks.scss */
+    .custom-block-large-banner .large-banner-image {
+      min-height: 700px;
+    }
+  }
+  @media (min-width: 768px) {
+    /* line 19, sass/blocks/_custom-blocks.scss */
+    .custom-block-large-banner .large-banner-image.image-desktop {
+      min-height: 840px;
+    }
+  }
+  @media (min-width: 768px) {
+    /* line 24, sass/blocks/_custom-blocks.scss */
+    .custom-block-large-banner .large-banner-image.image-mobile {
+      display: none;
+    }
+  }
+  /* line 30, sass/blocks/_custom-blocks.scss */
+  .custom-block-large-banner .banner-title {
+    margin-top: 0;
+  }
+  /* line 33, sass/blocks/_custom-blocks.scss */
+  .custom-block-large-banner .large-banner-content {
+    padding: 28px;
+    text-align: left;
+  }
+  @media (min-width: 768px) {
+    /* line 33, sass/blocks/_custom-blocks.scss */
+    .custom-block-large-banner .large-banner-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 56px 8.3333vw;
+      width: 50%;
+      min-height: 360px;
+      position: absolute;
+      z-index: 10;
+      bottom: 0;
+    }
+  }
+  /* line 49, sass/blocks/_custom-blocks.scss */
+  .custom-block-large-banner .large-banner-content.content-left {
+    left: 0;
+  }
+  /* line 51, sass/blocks/_custom-blocks.scss */
+  .custom-block-large-banner .large-banner-content.content-right {
+    right: 0;
+  }
+  /* line 54, sass/blocks/_custom-blocks.scss */
+  .custom-block-large-banner .link_wrapper {
+    margin-top: calc(28em / 19);
+  }
+  
 /**********************
 # Single Menneskene
 ********************/
@@ -4352,10 +4456,14 @@ miles-office-banner {
   MILES PAGES
   */
 
-.page-fagomrader miles-info-block,
 .page-vi-er-miles miles-image-block {
     margin-bottom: 4rem;
 }
+
+.page-fagomrader miles-info-block {
+    padding-top: 5rem;
+}
+
 
 .page-vi-er-miles
     .wp-block-group
@@ -4380,6 +4488,30 @@ miles-office-banner {
     font-weight: 400;
     font-size: 2rem;
 }
+
+.page-profil .wp-block-group__inner-container {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 1665px) {
+    .page-profil .wp-block-columns {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .page-profil .wp-block-columns .wp-block-column {
+      width: 100%;
+      flex-basis: auto;
+    }
+  
+    .page-profil .wp-block-columns .wp-block-column img {
+      width: auto;
+      max-width: 100%;
+      height: auto; 
+    }
+  }
 
 /* WP CONTACT FORMS 7 */
 form.wpcf7-form {
@@ -4413,4 +4545,54 @@ form.wpcf7-form input.wpcf7-submit {
     form.wpcf7-form input.wpcf7-submit {
         width: auto;
     }
+}
+
+/**
+ * Custom pagination controls for Milespodden
+ *
+ */
+.pagination-wrapper {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pagination-wrapper .nav-prev.alignleft {
+    text-align: left;
+    flex: 1;
+}
+.pagination-wrapper .nav-next.alignright {
+    text-align: right;
+    flex: 1;
+}
+
+.pagination-wrapper .nav-next a,
+.pagination-wrapper .nav-prev a {
+    text-decoration: none;
+    color: var(--miles_secondary_four);
+    font-size: 1.25rem;
+}
+
+.pagination-wrapper .nav-prev.alignleft:only-child {
+    margin-right: auto;
+}
+
+.pagination-wrapper .nav-next.alignright:only-child {
+    margin-left: auto;
+}
+
+/* Custom red text link - front page */
+.custom-link a{
+    text-decoration: none;
+    color: var(--miles_primary_dark);
+}
+
+.custom-link a:hover {
+    text-decoration: underline;
+    background-color: transparent;
+}
+
+.custom-link a:visited {
+    color: var(--miles_primary_dark);
 }

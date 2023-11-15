@@ -32,6 +32,11 @@ function findEmployeeByName($name, $employees) {
   return $employees[0]; // Return the first element if no match is found
 }
 
+function page_not_found() {
+	status_header(404);
+	get_template_part('404');
+}
+
 function format_query_vars()
 {
 	$employeeName = get_query_var('employeeName');
@@ -71,67 +76,18 @@ if ($usersRes && $usersRes != 'null') {
 	);
 }
 
-if (!$cv || $cv == 'null') {
-	echo 'No result. Ensure you have the API set up correctly following the guide here - https://wpgetapi.com/docs/quick-start-guide/';
-} else {
+if ($cv) {
+
 	$cvObject = json_decode($cv, true);
 
-	$name = $cvObject["name"];
-	$email = null/* $cvObject["email"] */;
-	$phone = null/* $cvObject["telephone"] */;
-	$rol = $cvObject["title"]["no"];
-	$firstCategory = $cvObject["office"]["name"];
-	$image = $cvObject["image"]["url"];
-	$keyQualifications = $cvObject["key_qualifications"];
-
-	$summary = null;
-	foreach ($keyQualifications as $qualification) {
-		if (strtolower($qualification['label']['no']) == "miles.no" ) {
-			$summary = $qualification['long_description']['no'];
-			break;
-		}
-		else if (strtolower($qualification['label']['int']) == "miles.no" ){
-			$summary = $qualification['long_description']['int'];
-			break;
-		}
+	if ($cvObject['status'] == 404) {
+		page_not_found();
+		exit();
 	}
+
+	set_query_var('cv', $cvObject);
+	get_template_part('template-parts/content-consultant');
+	get_footer();
+} else {
+	page_not_found();
 }
-?>
-
-<main id="primary" class="site-main">
-	<section class="menneskene type-menneskene status-publish format-standard hentry">
-		<header class="person-header">
-			<div class="person-meta-data">
-				<div class="name">
-					<?php echo $name; ?>
-				</div>
-				<div class="title-location">
-					<?php echo $rol; ?>
-					<?php echo ',' . $firstCategory ?>
-				</div>
-				<div class="email">
-					<?php echo $email; ?>
-				</div>
-				<div class="phone">
-					<?php echo $phone; ?>
-				</div>
-			</div>
-
-		</header><!-- .entry-header -->
-
-		<?php $thumbnail = (!empty($image)) ? $image : '/wp-content/themes/miles/image/female.png'; ?>
-		<figure class="person-thumbnail" style="background-image: url('<?php echo $thumbnail; ?>');">
-		</figure>
-
-		<div class="entry-content">
-			<p>
-				<?php echo $summary; ?>
-			</p>
-		</div><!-- .entry-content -->
-
-		</article><!-- #post -->
-</main><!-- #main -->
-
-<?php
-
-get_footer();

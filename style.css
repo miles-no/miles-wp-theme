@@ -736,6 +736,10 @@ figcaption {
     max-width: 55ch;
 }
 
+.entry-content li {
+    padding-right: 11ch;
+}
+
 /* line 12, sass/base/_elements.scss */
 ul,
 ol {

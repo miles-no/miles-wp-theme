@@ -577,12 +577,29 @@ function custom_add_query_vars( $vars ) {
 }
 add_filter('query_vars','custom_add_query_vars');
 
-function custom_add_rewrite_rules() {
+function initialize_miles_no() {
+	//Rewrite rules
 	add_rewrite_rule('^folkene/([^/]*)/?', 'index.php?employeeName=$matches[1]', 'top');
 	add_rewrite_rule('^ansatte/([^/]*)/?', 'index.php?employeeName=$matches[1]', 'top');
     add_rewrite_rule('^utvikling/ansatte/([^/]*)/?', 'index.php?employeeName=$matches[1]', 'top');
+
+	//Custom post type for Miles archive (Nyhetssaker)
+	register_post_type( 'miles_nyheter',
+		array(
+        	'delete_with_user' => false,
+			'supports'         => array( 'title', 'editor', 'author', 'revisions', 'thumbnail', 'excerpt' ),
+			'labels'      => array(
+				'name'          => __( 'Nyheter', 'miles_2020' ),
+				'singular_name' => __( 'Product', 'miles_2020' ),
+			),
+			'public'      => true,
+			'has_archive' => true,
+			'rewrite'     => array( 'slug' => 'nyhetssaker' ),
+			'show_in_rest' => true,
+		)
+	);
 }
-add_action('init','custom_add_rewrite_rules');
+add_action('init','initialize_miles_no');
 
 function custom_template_redirect( $template ) {
     if( get_query_var('employeeName') ) {

@@ -37,8 +37,7 @@
 					<?php echo $name; ?>
 				</div>
 				<div class="title-location">
-					<?php echo $rol; ?>
-					<?php echo ',' . $firstCategory ?>
+					<?php echo $rol . ($firstCategory ? ', ' . $firstCategory : ''); ?>
 				</div>
 				<div class="email">
 					<?php echo $email; ?>

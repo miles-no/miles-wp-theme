@@ -4493,6 +4493,7 @@ miles-office-banner {
     font-size: 2rem;
 }
 
+/* Profilside */
 .page-profil .wp-block-group__inner-container {
     max-width: 1000px;
     margin-left: auto;
@@ -4515,6 +4516,37 @@ miles-office-banner {
         max-width: 100%;
         height: auto;
     }
+}
+
+/* Smidigmanifest siden */
+.page-smidigmanifest .custom-block-large-banner{
+    margin-top: -6em;
+}
+
+.page-smidigmanifest .custom-video-embed-size {
+    width: 60%;
+    height: 60%;
+    margin-top: 3em;
+}
+
+@media (max-width: 1000px) {
+    .page-smidigmanifest .custom-video-embed-size {
+        width: 80%;
+        height: 80%;
+    }
+}
+
+.page-smidigmanifest .c-accordion__content{
+    padding-bottom: 1em;
+}
+
+.page-smidigmanifest #h-smidig-manifest{
+    padding-bottom: 0.5em;
+}
+
+.page-smidigmanifest .wp-block-image{
+    padding: 1em 0 2em 0;
+    
 }
 
 /* WP CONTACT FORMS 7 */

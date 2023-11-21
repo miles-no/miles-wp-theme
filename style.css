@@ -3484,7 +3484,8 @@ footer.entry-footer {
     }
 }
 
-.single-post > .site > .site-main > article {
+.single-post > .site > .site-main > article,
+.single-miles_nyheter > .site > .site-main > article {
     max-width: 1200px;
     margin: 0 auto;
 }

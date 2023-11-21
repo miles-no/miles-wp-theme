@@ -1077,12 +1077,30 @@ table {
 .site-main .type-page .entry-content {
     margin-top: 3rem;
 }
+
+.error-404 .page-header h1.page-title {
+    margin: 56px 0;
+}
+
+.error-404 .page-content p {
+    margin: 20px auto;
+}
+
 @media (min-width: 768px) {
     .search-container,
     .error-404,
     .entry-content {
         margin: 0 auto;
         width: var(--page-wrap);
+    }
+
+    .error-404 {
+        max-width: 66.6666vw;
+    }
+
+    .error-404 .page-header h1.page-title {
+        font-size: 72px;
+        line-height: 84px;
     }
 
     .site-main .type-page .entry-content {

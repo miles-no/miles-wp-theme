@@ -3621,6 +3621,11 @@ footer.entry-footer {
     margin-block-start: calc(28em / 19 - 7px);
     margin-left: 14px;
 }
+
+.person-meta-data div {
+    margin-bottom: 7px;
+}
+
 @media (min-width: 768px) {
     /* line 106, sass/components/_posts-and-pages.scss */
     .menneskene .person-header .person-meta-data {

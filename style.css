@@ -3472,7 +3472,7 @@ footer.entry-footer {
 
 .single-post .entry-meta,
 .single-miles_nyheter .entry-meta {
-    display: none;
+    display: block;
 }
 
 @media (min-width: 768px) {

@@ -3490,7 +3490,7 @@ footer.entry-footer {
 
 .single-post .entry-meta,
 .single-miles_nyheter .entry-meta {
-    display: none;
+    display: block;
 }
 
 @media (min-width: 768px) {
@@ -3502,7 +3502,8 @@ footer.entry-footer {
     }
 }
 
-.single-post > .site > .site-main > article {
+.single-post > .site > .site-main > article,
+.single-miles_nyheter > .site > .site-main > article {
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -3638,6 +3639,11 @@ footer.entry-footer {
     margin-block-start: calc(28em / 19 - 7px);
     margin-left: 14px;
 }
+
+.person-meta-data div {
+    margin-bottom: 7px;
+}
+
 @media (min-width: 768px) {
     /* line 106, sass/components/_posts-and-pages.scss */
     .menneskene .person-header .person-meta-data {
